@@ -7,7 +7,7 @@ public class Wizard extends Player {
 		super(name, hp, m);
 		//this.inventory.addItem(new Weapon("Staff")); will add a staff to his inventory evnetually
 	}
-	
+
 	
 	@Override
 	public String toString() {
