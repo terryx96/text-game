@@ -17,7 +17,6 @@ public class Main {
 		System.out.println("Hello");
 		
 		while(true) {
-			System.out.println("Hi");
 			p.move();
 		}
 		
@@ -34,7 +33,7 @@ public class Main {
 	}
 	
 	public static Player createCharacter() {
-		System.out.println("What is your name:\n"
+		System.out.print("What is your name:\n"
 						+ ">>>");
 		String name = input.nextLine();
 		System.out.print("What class will you play?\n"
