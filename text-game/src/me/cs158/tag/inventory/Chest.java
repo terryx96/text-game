@@ -2,12 +2,34 @@ package me.cs158.tag.inventory;
 
 import java.util.List;
 
+import me.cs158.tag.item.Key;
 import me.cs158.tag.main.Main.SUCCESS;
 
 public class Chest extends Inventory {
 	
+	private boolean locked = false;
+	private int keyId = -1;
+	
 	public Chest(List<ItemStack> items) {
 		super(items.size());
+	}
+	
+	public Chest(List<ItemStack> items, int keyId) {
+		super(items.size());
+		locked = true;
+		this.keyId = keyId;
+	}
+	
+	public boolean isLocked() {
+		return locked;
+	}
+	
+	public boolean unlock(Key key) {
+		if(key.getId() == keyId) {
+			locked = false;
+			return true;
+		}
+		return false;
 	}
 	
 	@Override
