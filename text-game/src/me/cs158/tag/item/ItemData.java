@@ -8,6 +8,8 @@ public class ItemData {
 			return 0;
 		case BROADSWORD:
 			return 1;
+		case MANA_POTION:
+			return 3;
 		default: return 0;
 		}
 	}
@@ -15,6 +17,9 @@ public class ItemData {
 	public static Items getItemType(Item item) {
 		if(item instanceof BroadSword) {
 			return Items.BROADSWORD;
+		}
+		if(item instanceof ManaPotion) {
+			return Items.MANA_POTION;
 		}
 		
 		//default

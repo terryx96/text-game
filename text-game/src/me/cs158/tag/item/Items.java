@@ -2,7 +2,8 @@ package me.cs158.tag.item;
 
 public enum Items {
 	NOTHING,
-	BROADSWORD("Broad Sword")
+	BROADSWORD("Broad Sword"),
+	MANA_POTION("Mana Potion")
 	;
 	
 	private final String name;
