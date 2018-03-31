@@ -14,4 +14,8 @@ public class Util {
 		return cloned;
 	}
 	
+	public static int random(int upperBound) {
+		return (int) (Math.random()*upperBound + 1);
+	}
+	
 }
