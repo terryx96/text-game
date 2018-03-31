@@ -5,9 +5,11 @@ import me.cs158.tag.player.Player;
 public class PlayerInventory extends Inventory {
 	
 	private Player owner;
+	private int itemStart;
 	
-	public PlayerInventory(Player owner, int size) {
-		super(size);
+	public PlayerInventory(Player owner, int weaponSize, int itemSize) {
+		super(weaponSize + itemSize);
+		itemStart = weaponSize;
 		this.owner = owner;
 	}
 	
