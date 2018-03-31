@@ -3,15 +3,14 @@ package me.cs158.tag.item;
 public class Item {
 	
 	private String name;
-	private int stackSize;
+	private Items item;
 	
-	public Item(String name, int stackSize) {
+	public Item(Items item, String name) {
 		this.name = name;
-		this.stackSize = stackSize;
 	}
 	
 	public int getStackSize() {
-		return stackSize;
+		return ItemData.getStackSize(item);
 	}
 	
 	public String getName() {
