@@ -10,7 +10,7 @@ import me.cs158.tag.main.Util;
 public class Inventory {
 	
 	private int size;
-	private ArrayList<ItemStack> items;
+	protected ArrayList<ItemStack> items;
 	
 	public Inventory(int size) {
 		this.size = size;
@@ -84,6 +84,15 @@ public class Inventory {
 		return success;
 	}
 	
+	public void removeItemStack(int index) {
+		items.set(index, new ItemStack(new Nothing(), 0));
+	}
+	
+	public boolean setItemStack(int index, ItemStack is) {
+		items.set(index, is);
+		return true;
+	}
+	
 	@Override
 	public String toString() {
 		return toString(false);
@@ -98,6 +107,19 @@ public class Inventory {
 		}
 		if(out.length() == 0) {
 			return "";
+		}
+		out = out.substring(0, out.length() - 1);
+		return out;
+	}
+	
+	public String printInventory() {
+		String out = "";
+		for(ItemStack is : items) {
+			if(is.getItemType() != Items.NOTHING) {
+				out += is.getCount() + " x " + is.getItemType().toString() + "\n";
+			} else {
+				out += "AVAILABLE\n";
+			}
 		}
 		out = out.substring(0, out.length() - 1);
 		return out;
