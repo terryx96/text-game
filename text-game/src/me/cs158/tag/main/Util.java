@@ -14,8 +14,18 @@ public class Util {
 		return cloned;
 	}
 	
-	public static int random(int upperBound) {
-		return (int) (Math.random()*upperBound + 1);
+	public static int random(int max) {
+		return random(0, max);
+	}
+	
+	public static int random(int min, int max) {
+		int diff = max - min + 1;
+		return ((int) (Math.random() * diff)) + min;
+	}
+	
+	public static double randomDouble(double min, double max) {
+		double diff = max - min;
+		return (Math.random() * diff) + min;
 	}
 	
 }
