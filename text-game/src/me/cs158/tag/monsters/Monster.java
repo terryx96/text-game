@@ -37,8 +37,9 @@ public abstract class Monster {
 	
 	public boolean dead() {
 		if(this.health <= 0) {
-			return false;
+			this.health = 0;
+			return true;
 		}
-		return true;
+		return false;
 	}
 }

@@ -7,20 +7,24 @@ import me.cs158.tag.main.Util;
 import me.cs158.tag.monsters.Monster;
 
 public class Archer extends Player {
-	RangedWeapon b = new Bow(this.getAtk(), this.getAtk()*2, 0, 100, 0);
-
+	private RangedWeapon b;
+	
 	public Archer(String name, int hp, int m) {
 		super(name, hp, m);
 		this.attack = 5;
 		this.defense = 6;
+		b = new Bow(this.attack, this.attack*2, 0, 100, 0);
 		this.inventory.addItem(new ItemStack(b));
+		
 	}
+	
+	
 
 	@Override
 	public void attack(Monster target) {
-		int damage = 0;
+		int damage = 1;
 		System.out.println("You fire your bow.");
-		if(b.hit(target.getDistance())) {
+		if(((RangedWeapon) this.inventory.getSlot(0).getItem()).hit(target.getDistance())) {
 			damage = (int) (this.getAtk() + b.getDamage());
 		}
 		else {
@@ -31,10 +35,10 @@ public class Archer extends Player {
 	
 	@Override
 	public void ability(Monster target) {
-		int damage = 0;
+		int damage = 1;
 		System.out.println("You fire a special arrow!");
 		this.takeMana(30);
-		if(b.hit(target.getDistance())) {
+		if(((RangedWeapon) this.inventory.getSlot(0).getItem()).hit(target.getDistance())) {			
 			damage = (int) (this.getAtk()*b.getDamage());
 		}
 		else {

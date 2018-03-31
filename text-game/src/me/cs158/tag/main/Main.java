@@ -17,8 +17,8 @@ public class Main {
 		
 		Sandbag poorboy = new Sandbag(1000, 2);
 		System.out.println(poorboy.getHp());
-		while(poorboy.dead()) {
-			x.attack(poorboy);
+		while(!poorboy.dead()) {
+			x.ability(poorboy);
 			System.out.println(poorboy.getHp());
 		}
 		
