@@ -7,7 +7,7 @@ import me.cs158.tag.monsters.Monster;
 public class GhostFight extends Event{
 	
 	public GhostFight() {
-		super(new Ghost(100,20), new Ghost(60, 30));
+		super(new Ghost(100, 10, 20), new Ghost(60, 10, 30));
 	}
 	
 	@Override

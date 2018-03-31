@@ -6,6 +6,7 @@ import java.util.Scanner;
 import me.cs158.tag.inventory.Inventory;
 import me.cs158.tag.inventory.PlayerInventory;
 import me.cs158.tag.main.Board;
+import me.cs158.tag.monsters.Monster;
 
 public abstract class Player {
 	public static Scanner input = new Scanner(System.in);
@@ -28,8 +29,12 @@ public abstract class Player {
 		
 	}
 	
-	public int ability() {
-		return 0;
+	public void ability(Monster target) {
+		
+	}
+	
+	public void attack(Monster target) {
+		
 	}
 	
 	public String getName() {
@@ -37,7 +42,7 @@ public abstract class Player {
 	}
 	
 	public String getInventory() {
-		return this.inventory.toString();
+		return this.inventory.printInventory();
 	}
 	
 	public int getHealth() {

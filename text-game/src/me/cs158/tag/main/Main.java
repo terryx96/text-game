@@ -1,9 +1,7 @@
 package me.cs158.tag.main;
-import java.awt.Graphics;
 import java.util.Scanner;
 
-import javax.swing.JFrame;
-
+import me.cs158.tag.monsters.Sandbag;
 import me.cs158.tag.player.*;
 
 public class Main {
@@ -12,24 +10,29 @@ public class Main {
 	public static Scanner input = new Scanner(System.in);
 	
 	public static void main(String[] args) {
-		Player p = createCharacter();
+		//Player p = createCharacter();
 		Board b = new Board(10);	
 		Player x = new Archer("Terry", 10,10);
 		System.out.println(x);
-		while(true) {
+		
+		Sandbag poorboy = new Sandbag(1000, 2);
+		System.out.println(poorboy.getHp());
+		while(poorboy.dead()) {
+			x.attack(poorboy);
+			System.out.println(poorboy.getHp());
+		}
+		
+		
+		
+		/*while(true) {
 			p.move();
 			b.checkPos(p);
 			b.getBoard(p.getxpos(), p.getypos()).actions();
 			
 			
 		}
-		
-		/*
-		 * This just puts the picture on the screen, I'll make a method for it, and a local directory 
-		 * for pictures so it works on computers besides mine
-		 * 
-		 * 
-		 */
+		*/
+
 	}
 	
 	public static Player createCharacter() {

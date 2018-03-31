@@ -11,6 +11,6 @@ public class Paladin extends Player {
 	
 	@Override
 	public String toString() {
-		return this.getName() + " Paladin " + this.getHealth() + " HP " + this.getMana() + " Mana\nInventory: " + this.getInventory() 
+		return this.getName() + " Paladin " + this.getHealth() + " HP " + this.getMana() + " Mana\nInventory: \n" + this.getInventory() 
 		+ "\nStats: ATK: " + this.getAtk() + " DEF: " + this.getDef();	}
 }
