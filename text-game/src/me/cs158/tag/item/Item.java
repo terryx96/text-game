@@ -1,6 +1,6 @@
 package me.cs158.tag.item;
 
-public class Item {
+public abstract class Item {
 	
 	private String name;
 	private Items item;
@@ -26,5 +26,8 @@ public class Item {
 	public String toString() {
 		return name;
 	}
+	
+	@Override
+	public abstract boolean equals(Object o);
 	
 }

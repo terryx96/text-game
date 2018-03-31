@@ -8,4 +8,9 @@ public class Nothing extends Item {
 		super(ITEM, ITEM.toString());
 	}
 	
+	@Override
+	public boolean equals(Object o) {
+		return (o instanceof Nothing);
+	}
+	
 }

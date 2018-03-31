@@ -2,7 +2,7 @@ package me.cs158.tag.item;
 
 import me.cs158.tag.main.Util;
 
-public class Weapon extends Item {
+public abstract class Weapon extends Item {
 	
 	private double minDamage;
 	private double maxDamage;
@@ -15,6 +15,14 @@ public class Weapon extends Item {
 	
 	public double getDamage() {
 		return Util.randomDouble(minDamage, maxDamage);
+	}
+	
+	public double getMinDamage() {
+		return minDamage;
+	}
+	
+	public double getMaxDamage() {
+		return maxDamage;
 	}
 	
 }

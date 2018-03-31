@@ -8,4 +8,13 @@ public class BroadSword extends MeleeWeapon {
 		super(ITEM, minDamage, maxDamage);
 	}
 	
+	@Override
+	public boolean equals(Object o) {
+		if(!(o instanceof BroadSword)) {
+			return false;
+		}
+		BroadSword bs = (BroadSword) o;
+		return (this.getMinDamage() == bs.getMinDamage() && this.getMaxDamage() == bs.getMaxDamage());
+	}
+	
 }
