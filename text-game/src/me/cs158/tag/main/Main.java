@@ -32,15 +32,14 @@ public class Main {
 	
 	public static Player createCharacter() {
 		System.out.print("What is your name:\n"
-						+ ">>>");
+						+ ">>> ");
 		String name = input.nextLine();
 		System.out.println();
 		System.out.print("What class will you play?\n"
 						+ "Archer, Paladin, Wizard, Knight, Warrior\n"
-						+ ">>>");
-		System.out.println();
+						+ ">>> ");
 		String classChoice = input.nextLine().toLowerCase();
-		
+		System.out.println();
 		switch(classChoice){
 		case "archer": return new Archer(name, 100, 50);
 		case "knight": return new Knight(name, 200, 30);
