@@ -26,6 +26,9 @@ public class ItemData {
 		if(item instanceof Key) {
 			return Items.KEY;
 		}
+		if(item instanceof Bow) {
+			return Items.BOW;
+		}
 		
 		//default
 		return Items.NOTHING;
