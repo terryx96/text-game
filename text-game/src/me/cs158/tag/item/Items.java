@@ -4,7 +4,8 @@ public enum Items {
 	NOTHING,
 	BROADSWORD("Broad Sword"),
 	MANA_POTION("Mana Potion"),
-	KEY("Key")
+	KEY("Key"),
+	BOW("Bow")
 	;
 	
 	private final String name;

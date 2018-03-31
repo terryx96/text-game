@@ -8,6 +8,7 @@ public class ItemData {
 			return 0;
 		case BROADSWORD:
 		case KEY:
+		case BOW:
 			return 1;
 		case MANA_POTION:
 			return 3;
