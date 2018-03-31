@@ -13,11 +13,12 @@ public class Main {
 	
 	public static void main(String[] args) {
 		Player p = createCharacter();
-		Board b = new Board(10);
-		System.out.println("Hello");
-		
+		Board b = new Board(10);		
 		while(true) {
 			p.move();
+			b.checkPos(p);
+			b.getBoard(p.getxpos(), p.getypos()).actions();
+			
 			
 		}
 		
@@ -37,9 +38,11 @@ public class Main {
 		System.out.print("What is your name:\n"
 						+ ">>>");
 		String name = input.nextLine();
+		System.out.println();
 		System.out.print("What class will you play?\n"
 						+ "Archer, Paladin, Wizard, Knight, Warrior\n"
 						+ ">>>");
+		System.out.println();
 		String classChoice = input.nextLine().toLowerCase();
 		
 		switch(classChoice){
@@ -51,6 +54,8 @@ public class Main {
 		default: return new Knight(name, 200, 30);
 		}
 	}
+	
+	
 	
 	
 	
