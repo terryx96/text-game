@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class Ghost extends Monster{
 	private int ectoplasm;
 	
-	public Ghost(int hp, int ecto) {
-		super(hp);
+	public Ghost(int hp, int d, int ecto) {
+		super(hp, d);
 		this.ectoplasm = ecto;
 		this.sentences = new ArrayList<String>();
 		this.sentences.add("Boo!");

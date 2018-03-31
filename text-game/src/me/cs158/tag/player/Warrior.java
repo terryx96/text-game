@@ -10,6 +10,6 @@ public class Warrior extends Player {
 	
 	@Override
 	public String toString() {
-		return this.getName() + " Warrior " + this.getHealth() + " HP " + this.getMana() + " Mana\nInventory: " + this.getInventory() 
+		return this.getName() + " Warrior " + this.getHealth() + " HP " + this.getMana() + " Mana\nInventory: \n" + this.getInventory() 
 		+ "\nStats: ATK: " + this.getAtk() + " DEF: " + this.getDef();	}
 }
