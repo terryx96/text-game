@@ -1,24 +1,19 @@
 package me.cs158.tag.events;
 
 import me.cs158.tag.monsters.Ghost;
+import me.cs158.tag.monsters.Monster;
 
 public class GhostFight extends Event{
 	
 	public GhostFight() {
-		super(new Ghost(100,20));
-		//this.enemies.add(new Ghost(200,10));
-		this.actions();
+		super(new Ghost(100,20), new Ghost(60, 30));
 	}
 	
 	@Override
 	public void actions() {
-		int turn = 0;
-		while(turn < 5) {		//this is proof of concept, actual events will be better lol
-			turn++;
-			this.enemies.get(0).speak();
-			
+		for(Monster e : this.enemies) {
+			System.out.println(e);
 		}
-		System.out.println("Win!");
 		
 	}
 	

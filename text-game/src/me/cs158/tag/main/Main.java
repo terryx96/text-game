@@ -26,11 +26,7 @@ public class Main {
 		 * This just puts the picture on the screen, I'll make a method for it, and a local directory 
 		 * for pictures so it works on computers besides mine
 		 * 
-		 * Scroll test = new Scroll("C:/Users/Terry/Desktop/east.jpg"); <----- Only works on mine lol fuck
-		 * JFrame f = new JFrame("HINT");
-		 * f.add(test);
-		 * f.setSize(test.getWidth() + 20, test.getHeight() + 40);
-		 * f.setVisible(true);
+		 * 
 		 */
 	}
 	

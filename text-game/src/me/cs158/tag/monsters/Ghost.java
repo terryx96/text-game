@@ -21,6 +21,11 @@ public class Ghost extends Monster{
 		return Util.random(this.ectoplasm);
 	}
 	
+	@Override
+	public String toString() {
+		return "Boo! I am a ghost!";
+	}
+	
 	
 	
 	

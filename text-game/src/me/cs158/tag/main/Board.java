@@ -26,13 +26,16 @@ public class Board {
 		int x = (int) (Math.random()*this.size + 1);
 		int y = (int) (Math.random()*this.size + 1);
 		
+		this.board[1][1] = new GhostFight();
+		this.board[1][2] = new EastScroll();
+		
 		for(int r = 0; r < this.board.length; r++) {
 			for(int c = 0; c < this.board[0].length; c++) {
-				this.board[r][c] = new Dumby();
+				if(this.board[r][c] == null) {
+					this.board[r][c] = new Dumby();
+				}
 			}
 		}
-		
-		
 	}
 	
 	public void checkPos(Player p) {

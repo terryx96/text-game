@@ -18,7 +18,7 @@ public abstract class Player {
 	
 	public Player(String name, int hp, int m) {
 		this.name = name;
-		this.inventory = new PlayerInventory(this, 10);
+		this.inventory = new PlayerInventory(this, 3, 6);
 		this.health = hp;
 		this.mana = m;
 		
