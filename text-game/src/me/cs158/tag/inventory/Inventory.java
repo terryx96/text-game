@@ -9,7 +9,7 @@ import me.cs158.tag.main.Util;
 
 public class Inventory {
 	
-	private int size;
+	protected int size;
 	protected ArrayList<ItemStack> items;
 	
 	public Inventory(int size) {
