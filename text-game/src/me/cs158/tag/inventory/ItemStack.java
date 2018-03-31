@@ -68,4 +68,9 @@ public class ItemStack {
 		return item;
 	}
 	
+	@Override
+	public String toString() {
+		return item.toString() + "x" + count;
+	}
+	
 }
