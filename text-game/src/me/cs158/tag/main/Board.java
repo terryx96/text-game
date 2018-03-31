@@ -1,6 +1,11 @@
 package me.cs158.tag.main;
 
 import me.cs158.tag.events.*;
+import me.cs158.tag.events.hostile.*;
+import me.cs158.tag.events.passive.*;
+import me.cs158.tag.events.hostile.GhostFight;
+import me.cs158.tag.events.passive.Dumby;
+import me.cs158.tag.events.passive.EastScroll;
 import me.cs158.tag.player.Player;
 
 public class Board {
@@ -28,6 +33,7 @@ public class Board {
 		
 		this.board[1][1] = new GhostFight();
 		this.board[1][2] = new EastScroll();
+		this.board[1][3] = new turnEightScroll();
 		
 		for(int r = 0; r < this.board.length; r++) {
 			for(int c = 0; c < this.board[0].length; c++) {

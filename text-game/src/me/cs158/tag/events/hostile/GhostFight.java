@@ -1,5 +1,6 @@
-package me.cs158.tag.events;
+package me.cs158.tag.events.hostile;
 
+import me.cs158.tag.events.Event;
 import me.cs158.tag.monsters.Ghost;
 import me.cs158.tag.monsters.Monster;
 
