@@ -43,6 +43,7 @@ public class ItemStack {
 			return false;
 		}
 		this.count = count;
+		isEmpty();
 		return true;
 	}
 	
