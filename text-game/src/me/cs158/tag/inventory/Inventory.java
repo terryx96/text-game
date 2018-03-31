@@ -83,4 +83,23 @@ public class Inventory {
 		return success;
 	}
 	
+	@Override
+	public String toString() {
+		return toString(false);
+	}
+	
+	public String toString(boolean includeEmpty) {
+		String out = "";
+		for(ItemStack is : items) {
+			if(is.getItem() != Items.NOTHING || includeEmpty) {
+				out += is.toString() + ",";
+			}
+		}
+		if(out.length() == 0) {
+			return "";
+		}
+		out = out.substring(0, out.length() - 1);
+		return out;
+	}
+	
 }

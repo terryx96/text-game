@@ -7,8 +7,8 @@ public class Weapon extends Item {
 	private double minDamage;
 	private double maxDamage;
 	
-	public Weapon(Items item, String name, float minDamage, float maxDamage) {
-		super(item, name);
+	public Weapon(Items item, float minDamage, float maxDamage) {
+		super(item);
 		this.minDamage = minDamage;
 		this.maxDamage = maxDamage;
 	}
