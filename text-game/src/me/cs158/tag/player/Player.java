@@ -48,6 +48,7 @@ public abstract class Player {
 			case "south": this.moveypos(-1);break;
 			default: System.out.println("Invalid, valid directions are: north, south, east, west");
 		}
+		
 		System.out.println("Current Position: " + this.displayPosition());
 		
 	}

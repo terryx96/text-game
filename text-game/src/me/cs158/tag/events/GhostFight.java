@@ -6,7 +6,7 @@ public class GhostFight extends Event{
 	
 	public GhostFight() {
 		super(new Ghost(100,20));
-		this.enemies.add(new Ghost(200,10));
+		//this.enemies.add(new Ghost(200,10));
 		this.actions();
 	}
 	

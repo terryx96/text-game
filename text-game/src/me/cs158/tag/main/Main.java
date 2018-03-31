@@ -18,6 +18,7 @@ public class Main {
 		
 		while(true) {
 			p.move();
+			
 		}
 		
 		/*

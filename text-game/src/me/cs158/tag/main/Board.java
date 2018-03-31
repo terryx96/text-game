@@ -28,4 +28,8 @@ public class Board {
 		this.board[x][y] = new GhostFight();
 		
 	}
+	
+	public Event getBoard(int x, int y){
+		return this.board[x][y];
+	}
 }
