@@ -13,7 +13,9 @@ public class Main {
 	
 	public static void main(String[] args) {
 		Player p = createCharacter();
-		Board b = new Board(10);		
+		Board b = new Board(10);	
+		Player x = new Archer("Terry", 10,10);
+		System.out.println(x);
 		while(true) {
 			p.move();
 			b.checkPos(p);

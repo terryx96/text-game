@@ -15,13 +15,21 @@ public abstract class Player {
 	private int mana;
 	private int xpos = 0;
 	private int ypos = 0;
+	protected int attack;
+	protected int defense;
 	
 	public Player(String name, int hp, int m) {
 		this.name = name;
 		this.inventory = new PlayerInventory(this, 3, 6);
 		this.health = hp;
 		this.mana = m;
+		this.attack = 0;
+		this.defense = 0;
 		
+	}
+	
+	public int ability() {
+		return 0;
 	}
 	
 	public String getName() {
@@ -38,6 +46,14 @@ public abstract class Player {
 	
 	public int getMana() {
 		return this.mana;
+	}
+	
+	public int getAtk() {
+		return this.attack;
+	}
+	
+	public int getDef() {
+		return this.defense;
 	}
 	
 	public void move() {
@@ -104,6 +120,14 @@ public abstract class Player {
 	
 	public void setypos(int y) {
 		this.ypos = y;
+	}
+	
+	public void chageAtk(int da) {
+		this.attack+=da;
+	}
+	
+	public void changeDef(int dd) {
+		this.defense+=dd;
 	}
 	
 	

@@ -7,11 +7,13 @@ public class Knight extends Player{
 	
 	public Knight(String name, int hp, int m) {
 		super(name, hp, m);
+		this.attack = 8;
+		this.defense = 11;
 	}
 	
 	@Override
 	public String toString() {
-		return this.getName() + " Knight " + this.getHealth() + "HP\nInventory: " + this.getInventory();
-	}
+		return this.getName() + " Knight " + this.getHealth() + " HP " + this.getMana() + " Mana\nInventory: " + this.getInventory() 
+		+ "\nStats: ATK: " + this.getAtk() + " DEF: " + this.getDef();	}
 
 }
