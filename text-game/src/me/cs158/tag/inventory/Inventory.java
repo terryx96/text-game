@@ -20,18 +20,35 @@ public class Inventory {
 		}
 	}
 	
+	/**
+	 * Returns the itemstacks contained within the inventory
+	 * @return	the itemstacks contained within the inventory
+	 */
 	public ArrayList<ItemStack> getItems() {
 		return Util.cloneList(items);
 	}
 	
+	/**
+	 * Returns the itemstack contained at the specified index
+	 * @param index	the index at which to grab the itemstack
+	 * @return	the itemstack at the specified index
+	 */
 	public ItemStack getSlot(int index) {
 		return items.get(index);
 	}
 	
+	/**
+	 * Returns the size of the inventory
+	 * @return	the size of the inventory
+	 */
 	public int getSize() {
 		return size;
 	}
 	
+	/**
+	 * Returns the number of occupied slots in the inventory
+	 * @return	the number of occupied slots in the inventory
+	 */
 	public int getOccupiedSlots() {
 		int count = 0;
 		for(ItemStack is : items) {
@@ -41,10 +58,19 @@ public class Inventory {
 		return count;
 	}
 	
+	/**
+	 * Returns the number of open slots in the inventory
+	 * @return	the number of open slots in the inventory
+	 */
 	public int getOpenSlots() {
 		return size - getOccupiedSlots();
 	}
 	
+	/**
+	 * Set the size of the inventory
+	 * @param size	the new size of the inventory
+	 * @return	true if the size was successfully changed, false otherwise
+	 */
 	public boolean setSize(int size) {
 		if(size > this.size) {
 			for(int i = this.size;i < size;i++) {
@@ -62,6 +88,11 @@ public class Inventory {
 		return false;
 	}
 	
+	/**
+	 * Add an itemstack to the inventory
+	 * @param add	The itemstack to add to the inventory
+	 * @return	TRUE if the entire itemstack was added to the inventory, PARTIAL if part of the itemstack was added, and FALSE if none
+	 */
 	public SUCCESS addItem(ItemStack add) {
 		SUCCESS success = SUCCESS.FALSE;
 		for(ItemStack is : items) {
@@ -88,10 +119,20 @@ public class Inventory {
 		return success;
 	}
 	
+	/**
+	 * Remove an itemstack from the inventory
+	 * @param index	the index of the itemstack to be removed
+	 */
 	public void removeItemStack(int index) {
 		items.set(index, new ItemStack(new Nothing(), 0));
 	}
 	
+	/**
+	 * Set an itemstack in the inventory
+	 * @param index	the index of the itemstack to be removed
+	 * @param is	the itemstack to insert at index
+	 * @return	true if the itemstack was successfully set, false otherwise
+	 */
 	public boolean setItemStack(int index, ItemStack is) {
 		items.set(index, is);
 		return true;
@@ -116,6 +157,10 @@ public class Inventory {
 		return out;
 	}
 	
+	/**
+	 * Return the inventory in human-readable format to be displayed to the player
+	 * @return	the inventory in human-readable format to be displayed to the player
+	 */
 	public String printInventory() {
 		String out = "";
 		for(ItemStack is : items) {

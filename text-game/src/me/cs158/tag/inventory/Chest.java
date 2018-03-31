@@ -20,10 +20,19 @@ public class Chest extends Inventory {
 		this.keyId = keyId;
 	}
 	
+	/**
+	 * Returns whether or not the chest is locked.
+	 * @return	whether or not the chest is locked
+	 */
 	public boolean isLocked() {
 		return locked;
 	}
 	
+	/**
+	 * Attempt to unlock the chest with the specified key.
+	 * @param key	The key with which to attempt to unlock the chest
+	 * @return	True if the chest was successfully unlocked, false otherwise
+	 */
 	public boolean unlock(Key key) {
 		if(key.getId() == keyId) {
 			locked = false;

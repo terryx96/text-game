@@ -27,6 +27,10 @@ public class ItemStack {
 		this(item, 1);
 	}
 	
+	/**
+	 * Returns whether or not the itemstack is empty
+	 * @return	whether or not the itemstack is empty
+	 */
 	public boolean isEmpty() {
 		if(count == 0) {
 			item = new Nothing();
@@ -34,10 +38,19 @@ public class ItemStack {
 		return count == 0;
 	}
 	
+	/**
+	 * Returns the number of items in the stack
+	 * @return	the number of items in the stack
+	 */
 	public int getCount() {
 		return count;
 	}
 	
+	/**
+	 * Sets the number of items in the stack
+	 * @param count	the number of items
+	 * @return	true if the count was set successfully (valid), false otherwise
+	 */
 	public boolean setCount(int count) {
 		if(count < 0 || count > item.getStackSize()) {
 			return false;
@@ -47,30 +60,60 @@ public class ItemStack {
 		return true;
 	}
 	
+	/**
+	 * Add one to the stack count
+	 * @return	true if the count was changed successfully, false otherwise
+	 */
 	public boolean add() {
 		return setCount(count + 1);
 	}
 	
+	/**
+	 * Add the specified number to the stack count
+	 * @param c	the number to be added
+	 * @return	true if the count was changed successfully, false otherwise
+	 */
 	public boolean add(int c) {
 		return setCount(count + c);
 	}
 	
+	/**
+	 * Returns the number of items which can be added to this itemstack
+	 * @return	the number of items which can be added to this itemstack
+	 */
 	public int getAvailability() {
 		return item.getStackSize() - count;
 	}
 	
+	/**
+	 * Remove one from the itemstack count
+	 * @return	true if the count was successfully changed, false otherwise
+	 */
 	public boolean remove() {
 		return setCount(count - 1);
 	}
 	
+	/**
+	 * Remove the specified number from the itemstack count
+	 * @param c	the number of items to remove
+	 * @return	true if the count was successfully changed, false otherwise
+	 */
 	public boolean remove(int c) {
 		return setCount(count - c);
 	}
 	
+	/**
+	 * Returns the item in the itemstack
+	 * @return	the item in the itemstack
+	 */
 	public Item getItem() {
 		return item;
 	}
 	
+	/**
+	 * Returns the item type of the itemstack
+	 * @return	the item type of the itemstack
+	 */
 	public Items getItemType() {
 		return ItemData.getItemType(item);
 	}

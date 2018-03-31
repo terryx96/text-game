@@ -16,22 +16,42 @@ public class PlayerInventory extends Inventory {
 		this.owner = owner;
 	}
 	
+	/**
+	 * Returns the owner of the inventory
+	 * @return	the owner of the inventory
+	 */
 	public Player getOwner() {
 		return owner;
 	}
 	
+	/**
+	 * Sets the owner of the inventory
+	 * @param owner	the new owner of the inventory
+	 */
 	public void setOwner(Player owner) {
 		this.owner = owner;
 	}
 	
+	/**
+	 * Returns the number of weapon slots
+	 * @return	the number of weapon slots
+	 */
 	public int getNumWeaponSlots() {
 		return weaponSize;
 	}
 	
+	/**
+	 * Returns the number of item slots
+	 * @return	the number of item slots
+	 */
 	public int getNumItemSlots() {
 		return size - weaponSize;
 	}
 	
+	/**
+	 * Returns the number of occupied weapon slots
+	 * @return	the number of occupied weapon slots
+	 */
 	public int getOccupiedWeaponSlots() {
 		int count = 0;
 		for(int i = 0;i < weaponSize;i++) {
@@ -41,10 +61,18 @@ public class PlayerInventory extends Inventory {
 		return count;
 	}
 	
+	/**
+	 * Returns the number of open weapon slots
+	 * @return	the number of open weapon slots
+	 */
 	public int getOpenWeaponSlots() {
 		return weaponSize - getOccupiedWeaponSlots();
 	}
 	
+	/**
+	 * Returns the number of occupied item slots
+	 * @return	the number of occupied item slots
+	 */
 	public int getOccupiedItemSlots() {
 		int count = 0;
 		for(int i = weaponSize;i < size;i++) {
@@ -54,6 +82,10 @@ public class PlayerInventory extends Inventory {
 		return count;
 	}
 	
+	/**
+	 * Returns the number of open item slots
+	 * @return	the number of open item slots
+	 */
 	public int getOpenItemSlots() {
 		return (size - weaponSize) - getOccupiedItemSlots();
 	}
