@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import me.cs158.tag.main.Main.SUCCESS;
 import me.cs158.tag.item.Items;
+import me.cs158.tag.item.Nothing;
 import me.cs158.tag.main.Util;
 
 public class Inventory {
@@ -15,7 +16,7 @@ public class Inventory {
 		this.size = size;
 		items = new ArrayList<ItemStack>(size);
 		for(int i = 0;i < size;i++) {
-			items.add(new ItemStack(Items.NOTHING, 0));
+			items.add(new ItemStack(new Nothing(), 0));
 		}
 	}
 	
@@ -30,7 +31,7 @@ public class Inventory {
 	public int getOccupiedSlots() {
 		int count = 0;
 		for(ItemStack is : items) {
-			if(is.getItem() != Items.NOTHING)
+			if(is.getItemType() != Items.NOTHING)
 				count++;
 		}
 		return count;
@@ -43,7 +44,7 @@ public class Inventory {
 	public boolean setSize(int size) {
 		if(size > this.size) {
 			for(int i = this.size;i < size;i++) {
-				items.set(i, new ItemStack(Items.NOTHING, 0));
+				items.set(i, new ItemStack(new Nothing(), 0));
 			}
 			this.size = size;
 			return true;
@@ -75,7 +76,7 @@ public class Inventory {
 		}
 		for(int i = 0;i < items.size();i++) {
 			ItemStack is = items.get(i);
-			if(is.getItem() == Items.NOTHING) {
+			if(is.getItemType() == Items.NOTHING) {
 				items.set(i, add);
 				return SUCCESS.TRUE;
 			}
@@ -91,7 +92,7 @@ public class Inventory {
 	public String toString(boolean includeEmpty) {
 		String out = "";
 		for(ItemStack is : items) {
-			if(is.getItem() != Items.NOTHING || includeEmpty) {
+			if(is.getItemType() != Items.NOTHING || includeEmpty) {
 				out += is.toString() + ",";
 			}
 		}

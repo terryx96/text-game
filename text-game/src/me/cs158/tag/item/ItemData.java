@@ -10,4 +10,13 @@ public class ItemData {
 		}
 	}
 	
+	public static Items getItemType(Item item) {
+		if(item instanceof BroadSword) {
+			return Items.BROADSWORD;
+		}
+		
+		//default
+		return Items.NOTHING;
+	}
+	
 }

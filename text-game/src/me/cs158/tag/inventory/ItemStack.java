@@ -1,33 +1,35 @@
 package me.cs158.tag.inventory;
 
 import me.cs158.tag.exception.InvalidCountException;
+import me.cs158.tag.item.Item;
 import me.cs158.tag.item.ItemData;
 import me.cs158.tag.item.Items;
+import me.cs158.tag.item.Nothing;
 
 public class ItemStack {
 	
-	private Items item;
+	private Item item;
 	private int count;
 	
-	public ItemStack(Items item, int count) {
-		if(item != null && count > 0 && count <= ItemData.getStackSize(item)) {
+	public ItemStack(Item item, int count) {
+		if(item != null && count > 0 && count <= item.getStackSize()) {
 			this.item = item;
 			this.count = count;
 		} else if(count == 0) {
-			this.item = Items.NOTHING;
+			this.item = new Nothing();
 			this.count = 0;
 		} else {
 			throw new InvalidCountException();
 		}
 	}
 	
-	public ItemStack(Items item) {
+	public ItemStack(Item item) {
 		this(item, 1);
 	}
 	
 	public boolean isEmpty() {
 		if(count == 0) {
-			item = Items.NOTHING;
+			item = new Nothing();
 		}
 		return count == 0;
 	}
@@ -37,7 +39,7 @@ public class ItemStack {
 	}
 	
 	public boolean setCount(int count) {
-		if(count < 0 || count > ItemData.getStackSize(item)) {
+		if(count < 0 || count > item.getStackSize()) {
 			return false;
 		}
 		this.count = count;
@@ -53,7 +55,7 @@ public class ItemStack {
 	}
 	
 	public int getAvailability() {
-		return ItemData.getStackSize(item) - count;
+		return item.getStackSize() - count;
 	}
 	
 	public boolean remove() {
@@ -64,8 +66,12 @@ public class ItemStack {
 		return setCount(count - c);
 	}
 	
-	public Items getItem() {
+	public Item getItem() {
 		return item;
+	}
+	
+	public Items getItemType() {
+		return ItemData.getItemType(item);
 	}
 	
 	@Override
