@@ -3,7 +3,8 @@ package me.cs158.tag.item;
 public enum Items {
 	NOTHING,
 	BROADSWORD("Broad Sword"),
-	MANA_POTION("Mana Potion")
+	MANA_POTION("Mana Potion"),
+	KEY("Key")
 	;
 	
 	private final String name;

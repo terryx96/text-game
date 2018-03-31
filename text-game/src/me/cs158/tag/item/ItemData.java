@@ -7,6 +7,7 @@ public class ItemData {
 		case NOTHING:
 			return 0;
 		case BROADSWORD:
+		case KEY:
 			return 1;
 		case MANA_POTION:
 			return 3;
@@ -20,6 +21,9 @@ public class ItemData {
 		}
 		if(item instanceof ManaPotion) {
 			return Items.MANA_POTION;
+		}
+		if(item instanceof Key) {
+			return Items.KEY;
 		}
 		
 		//default
