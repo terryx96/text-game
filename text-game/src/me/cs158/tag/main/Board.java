@@ -1,6 +1,7 @@
 package me.cs158.tag.main;
 
 import me.cs158.tag.events.*;
+import me.cs158.tag.player.Player;
 
 public class Board {
 	/*
@@ -24,9 +25,41 @@ public class Board {
 	private void initializeBoard() {
 		int x = (int) (Math.random()*this.size + 1);
 		int y = (int) (Math.random()*this.size + 1);
-		System.out.println("Ghost fight at (" + x + "," + y + ")");
-		this.board[x][y] = new GhostFight();
 		
+		for(int r = 0; r < this.board.length; r++) {
+			for(int c = 0; c < this.board[0].length; c++) {
+				this.board[r][c] = new Dumby();
+			}
+		}
+		
+		
+	}
+	
+	public void checkPos(Player p) {
+		if(p.getxpos() < 0) {
+			p.setxpos(0);
+			System.out.println("Out of bounds.");
+		}
+		if(p.getxpos() == this.getSize()) {
+			p.setxpos(this.getSize()-1);			
+			System.out.println("Out of bounds.");
+
+		}
+		if(p.getypos() < 0) {
+			p.setypos(0);
+			System.out.println("Out of bounds.");
+
+		}
+		if(p.getypos() == this.getSize()) {
+			p.setypos(this.getSize()-1);
+			System.out.println("Out of bounds.");
+
+		}
+		
+	}
+	
+	public int getSize() {
+		return this.size;
 	}
 	
 	public Event getBoard(int x, int y){

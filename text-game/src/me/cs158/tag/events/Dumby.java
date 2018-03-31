@@ -6,4 +6,9 @@ public class Dumby extends Event {
 	public Dumby() {
 		super();
 	}
+	
+	@Override
+	public void actions() {
+		System.out.println("This is an action from the Dumby class!\n");
+	}
 }

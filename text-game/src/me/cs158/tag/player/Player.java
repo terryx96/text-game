@@ -4,11 +4,13 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 import me.cs158.tag.inventory.Inventory;
+import me.cs158.tag.inventory.PlayerInventory;
+import me.cs158.tag.main.Board;
 
 public abstract class Player {
 	public static Scanner input = new Scanner(System.in);
 	private String name;
-	protected Inventory inventory;
+	protected PlayerInventory inventory;
 	private int health;
 	private int mana;
 	private int xpos = 0;
@@ -16,7 +18,7 @@ public abstract class Player {
 	
 	public Player(String name, int hp, int m) {
 		this.name = name;
-		this.inventory = new Inventory(10);
+		this.inventory = new PlayerInventory(this, 10);
 		this.health = hp;
 		this.mana = m;
 		
@@ -41,6 +43,7 @@ public abstract class Player {
 	public void move() {
 		System.out.print("Which direction: ");
 		String direction = input.nextLine();
+		
 		switch(direction.toLowerCase()) {
 			case "north": this.moveypos(1); break;
 			case "west": this.movexpos(-1); break;
@@ -52,6 +55,7 @@ public abstract class Player {
 		System.out.println("Current Position: " + this.displayPosition());
 		
 	}
+	
 	
 	@Override
 	public String toString() {
@@ -92,6 +96,14 @@ public abstract class Player {
 	
 	public void takeMana(int x) {
 		this.mana+=x;
+	}
+	
+	public void setxpos(int x) {
+		this.xpos = x;
+	}
+	
+	public void setypos(int y) {
+		this.ypos = y;
 	}
 	
 	
