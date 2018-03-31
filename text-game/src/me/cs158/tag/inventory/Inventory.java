@@ -63,8 +63,8 @@ public class Inventory {
 		for(ItemStack is : items) {
 			if(is.getItem().equals(add.getItem())) {
 				if(is.getAvailability() >= add.getCount()) {
-					add.remove(add.getCount());
 					is.add(add.getCount());
+					add.remove(add.getCount());
 					return SUCCESS.TRUE;
 				} else {
 					int c = is.getAvailability();
