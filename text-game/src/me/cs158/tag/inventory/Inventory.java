@@ -24,6 +24,10 @@ public class Inventory {
 		return Util.cloneList(items);
 	}
 	
+	public ItemStack getSlot(int index) {
+		return items.get(index);
+	}
+	
 	public int getSize() {
 		return size;
 	}
