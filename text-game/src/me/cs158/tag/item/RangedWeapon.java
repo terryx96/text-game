@@ -26,7 +26,12 @@ public abstract class RangedWeapon extends Weapon {
 	}
 	
 	public boolean hit(int distance) {
-		double finalChance = chance - (fallOff * distance);
+		double finalChance;
+		if(distance <= range) {
+			finalChance = chance; 
+		} else {
+			finalChance = chance - (fallOff * (distance - range));
+		}
 		return Math.random() < finalChance;
 	}
 	
