@@ -6,6 +6,8 @@ public class ItemData {
 		switch(item) {
 		case NOTHING:
 			return 0;
+		case BROADSWORD:
+			return 1;
 		default: return 0;
 		}
 	}
