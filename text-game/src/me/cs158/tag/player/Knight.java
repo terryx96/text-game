@@ -3,15 +3,25 @@ package me.cs158.tag.player;
 import me.cs158.tag.inventory.ItemStack;
 import me.cs158.tag.item.BroadSword;
 import me.cs158.tag.item.MeleeWeapon;
+import me.cs158.tag.item.RangedWeapon;
+import me.cs158.tag.monsters.Monster;
 
 public class Knight extends Player{
-	private int shieldBashes;
+	private MeleeWeapon s;
 	
 	public Knight(String name, int hp, int m) {
 		super(name, hp, m);
 		this.attack = 8;
 		this.defense = 11;
-		this.inventory.addItem(new ItemStack(new BroadSword(2,10)));
+		s = new BroadSword(2,10);
+		this.inventory.addItem(new ItemStack(s));
+	}
+	
+	@Override
+	public void attack(Monster target) {
+		int damage = 1;
+		System.out.println("You slash your sword!");
+		target.setHp(damage);
 	}
 	
 	@Override

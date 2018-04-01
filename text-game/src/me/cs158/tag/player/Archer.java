@@ -18,8 +18,6 @@ public class Archer extends Player {
 		
 	}
 	
-	
-
 	@Override
 	public void attack(Monster target) {
 		int damage = 1;

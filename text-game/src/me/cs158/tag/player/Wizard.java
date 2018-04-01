@@ -8,6 +8,8 @@ public class Wizard extends Player {
 		this.attack = 3;
 		this.defense = 5;	
 		}
+	
+	
 
 	
 	@Override
