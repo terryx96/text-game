@@ -18,4 +18,9 @@ public class ManaPotion extends Potion {
 		return potion.getAmount() == this.getAmount();
 	}
 	
+	@Override
+	public Item copy() {
+		return new ManaPotion(this.getAmount());
+	}
+	
 }

@@ -18,7 +18,12 @@ public class Bow extends RangedWeapon {
 				this.getMaxDamage() == bow.getMaxDamage() &&
 				this.getRange() == bow.getRange() &&
 				this.getChance() == bow.getChance() &&
-				this.fallOff == bow.getFallOff();
+				this.getFallOff() == bow.getFallOff();
+	}
+	
+	@Override
+	public Item copy() {
+		return new Bow(this.getMinDamage(), this.getMaxDamage(), this.getRange(), this.getChance(), this.getFallOff());
 	}
 	
 }

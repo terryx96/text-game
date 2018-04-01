@@ -13,4 +13,8 @@ public class Nothing extends Item {
 		return (o instanceof Nothing);
 	}
 	
+	public Item copy() {
+		return new Nothing();
+	}
+	
 }

@@ -27,4 +27,9 @@ public class Key extends Item {
 		return key.getId() == id;
 	}
 	
+	@Override
+	public Item copy() {
+		return new Key(id);
+	}
+	
 }

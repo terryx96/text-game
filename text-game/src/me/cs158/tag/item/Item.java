@@ -38,4 +38,15 @@ public abstract class Item {
 	@Override
 	public abstract boolean equals(Object o);
 	
+	@Override
+	public Object clone() {
+		return this.copy();
+	};
+	
+	/**
+	 * Returns a copy of the item
+	 * @return	a copy of the item
+	 */
+	public abstract Item copy();
+	
 }

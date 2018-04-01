@@ -17,4 +17,9 @@ public class BroadSword extends MeleeWeapon {
 		return (this.getMinDamage() == bs.getMinDamage() && this.getMaxDamage() == bs.getMaxDamage());
 	}
 	
+	@Override
+	public Item copy() {
+		return new BroadSword(this.getMinDamage(), this.getMaxDamage());
+	}
+	
 }
