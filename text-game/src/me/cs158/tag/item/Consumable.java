@@ -6,4 +6,8 @@ public abstract class Consumable extends Item {
 		super(item);
 	}
 	
+	public Consumable(Items item, String name) {
+		super(item, name);
+	}
+	
 }

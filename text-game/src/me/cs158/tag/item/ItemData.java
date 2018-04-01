@@ -15,7 +15,7 @@ public class ItemData {
 		case KEY:
 		case BOW:
 			return 1;
-		case MANA_POTION:
+		case POTION:
 			return 3;
 		default: return 0;
 		}
@@ -30,8 +30,8 @@ public class ItemData {
 		if(item instanceof BroadSword) {
 			return Items.BROADSWORD;
 		}
-		if(item instanceof ManaPotion) {
-			return Items.MANA_POTION;
+		if(item instanceof Potion) {
+			return Items.POTION;
 		}
 		if(item instanceof Key) {
 			return Items.KEY;

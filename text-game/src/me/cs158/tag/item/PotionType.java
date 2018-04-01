@@ -1,27 +1,24 @@
 package me.cs158.tag.item;
 
-public enum Items {
+public enum PotionType {
 	NOTHING,
-	BROADSWORD("Broad Sword"),
-	POTION("Potion"),
-	KEY("Key"),
-	BOW("Bow")
+	MANA("Mana")
 	;
 	
 	private final String name;
 	
-	private Items() {
+	private PotionType() {
 		name = null;
 	}
 	
-	private Items(String name) {
+	private PotionType(String name) {
 		this.name = name;
 	}
 	
 	@Override
 	public String toString() {
 		if(name == null) {
-			return this.name();
+			return this.name() + " Potion";
 		}
 		return name;
 	}

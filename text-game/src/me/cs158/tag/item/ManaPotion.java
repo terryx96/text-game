@@ -2,15 +2,20 @@ package me.cs158.tag.item;
 
 public class ManaPotion extends Potion {
 
-	private static final Items ITEM = Items.MANA_POTION;
+	private static final Items ITEM = Items.POTION;
+	private static final PotionType TYPE = PotionType.MANA;
 	
-	public ManaPotion() {
-		super(ITEM);
+	public ManaPotion(int amount) {
+		super(ITEM, TYPE, amount);
 	}
 
 	@Override
 	public boolean equals(Object o) {
-		return o instanceof ManaPotion;
+		if(!(o instanceof ManaPotion)) {
+			return false;
+		}
+		ManaPotion potion = (ManaPotion) o;
+		return potion.getAmount() == this.getAmount();
 	}
 	
 }
