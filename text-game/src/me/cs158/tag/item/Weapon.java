@@ -13,14 +13,26 @@ public abstract class Weapon extends Item {
 		this.maxDamage = maxDamage;
 	}
 	
+	/**
+	 * Returns the damage the weapon dealt
+	 * @return	the damage the weapon dealt
+	 */
 	public double getDamage() {
 		return Util.randomDouble(minDamage, maxDamage);
 	}
 	
+	/**
+	 * Returns the minimum damage of the weapon
+	 * @return	the minimum damage of the weapon
+	 */
 	public double getMinDamage() {
 		return minDamage;
 	}
 	
+	/**
+	 * Returns the maximum damage of the weapon
+	 * @return	the maximum damage of the weapon
+	 */
 	public double getMaxDamage() {
 		return maxDamage;
 	}

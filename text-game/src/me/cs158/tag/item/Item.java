@@ -14,10 +14,18 @@ public abstract class Item {
 		this.name = name;
 	}
 	
+	/**
+	 * Returns the maximum stack size for this item type
+	 * @return	the maximum stack size for this item type
+	 */
 	public int getStackSize() {
 		return ItemData.getStackSize(item);
 	}
 	
+	/**
+	 * Returns the name of the item
+	 * @return	the name of the item
+	 */
 	public String getName() {
 		return name;
 	}

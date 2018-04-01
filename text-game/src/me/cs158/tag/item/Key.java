@@ -10,6 +10,10 @@ public class Key extends Item {
 		this.id = id;
 	}
 	
+	/**
+	 * Returns the id of the key
+	 * @return	the id of the key
+	 */
 	public int getId() {
 		return id;
 	}
