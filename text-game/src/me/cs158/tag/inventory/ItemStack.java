@@ -118,6 +118,38 @@ public class ItemStack {
 		return ItemData.getItemType(item);
 	}
 	
+	/**
+	 * Returns part of the itemstack after splitting it
+	 * @param count	the number of items to be removed from the stack and added to the new stack
+	 * @return	the part of the itemstack removed from the existing stack
+	 */
+	public ItemStack split(int count) {
+		if(count <= 0) {
+			return new ItemStack(new Nothing(), 0);
+		}
+		ItemStack is = this.copy();
+		if(count >= this.count) {
+			this.setCount(0);
+			return is;
+		}
+		is.setCount(count);
+		this.setCount(this.count - count);
+		return is;
+	}
+	
+	/**
+	 * Returns a copy of the itemstack
+	 * @return	a copy of the itemstack
+	 */
+	public ItemStack copy() {
+		return new ItemStack(item.copy(), count);
+	}
+	
+	@Override
+	public Object clone() {
+		return copy();
+	}
+	
 	@Override
 	public String toString() {
 		return item.toString() + "x" + count;
