@@ -14,8 +14,8 @@ public enum Items {
 		name = null;
 	}
 	
-	private Items(String value) {
-		name = value;
+	private Items(String name) {
+		this.name = name;
 	}
 	
 	@Override
