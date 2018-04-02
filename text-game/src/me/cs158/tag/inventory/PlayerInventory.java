@@ -107,6 +107,27 @@ public class PlayerInventory extends Inventory {
 		return getEquippedStack().getItem();
 	}
 	
+	/**
+	 * Change the player's equipped weapon
+	 * @param index	the index in the inventory of the weapon to equip
+	 * @return	true if the weapon was successfully equipped, false otherwise
+	 */
+	public boolean setEquippedWeapon(int index) {
+		if(index == 0) {
+			return true;
+		}
+		if(index >= weaponSize) {
+			return false;
+		}
+		if(!(items.get(index).getItem() instanceof Weapon)) {
+			return false;
+		}
+		ItemStack swap = items.get(0);
+		items.set(0, items.get(index));
+		items.set(index, swap);
+		return true;
+	}
+	
 	@Override
 	public boolean setSize(int size) {
 		if(size < weaponSize) {
