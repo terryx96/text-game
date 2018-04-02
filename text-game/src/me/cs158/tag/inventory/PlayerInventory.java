@@ -1,5 +1,6 @@
 package me.cs158.tag.inventory;
 
+import me.cs158.tag.item.Item;
 import me.cs158.tag.item.Items;
 import me.cs158.tag.item.Weapon;
 import me.cs158.tag.main.Main.SUCCESS;
@@ -88,6 +89,22 @@ public class PlayerInventory extends Inventory {
 	 */
 	public int getOpenItemSlots() {
 		return (size - weaponSize) - getOccupiedItemSlots();
+	}
+	
+	/**
+	 * Returns the player's equipped item stack
+	 * @return	the player's equipped item stack
+	 */
+	public ItemStack getEquippedStack() {
+		return items.get(0);
+	}
+	
+	/**
+	 * Returns the player's equipped item
+	 * @return	the player's equipped item
+	 */
+	public Item getEquippedItem() {
+		return getEquippedStack().getItem();
 	}
 	
 	@Override
