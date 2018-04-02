@@ -5,8 +5,8 @@ import javax.swing.JFrame;
 import me.cs158.tag.events.DisplayEvent;
 import me.cs158.tag.main.Scroll;
 
-public class turnEightScroll extends DisplayEvent{
-	public turnEightScroll() {
+public class TurnEightScroll extends DisplayEvent{
+	public TurnEightScroll() {
 		super(new Scroll("images/turnEight.jpg"));
 		JFrame f = new JFrame("HINT");
 	}

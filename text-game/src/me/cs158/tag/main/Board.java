@@ -33,7 +33,7 @@ public class Board {
 		
 		this.board[1][1] = new GhostFight();
 		this.board[1][2] = new EastScroll();
-		this.board[1][3] = new turnEightScroll();
+		this.board[1][3] = new TurnEightScroll();
 		
 		for(int r = 0; r < this.board.length; r++) {
 			for(int c = 0; c < this.board[0].length; c++) {
