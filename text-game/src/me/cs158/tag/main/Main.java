@@ -15,7 +15,7 @@ public class Main {
 		while(true) {
 			p.move();
 			b.checkPos(p);
-			b.getBoard(p.getxpos(), p.getypos()).actions();
+			b.getBoard(p.getX(), p.getY()).actions();
 			
 			
 		}

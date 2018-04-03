@@ -70,14 +70,14 @@ public abstract class Player {
 	}
 	
 	public void move() {
-		System.out.print("North, South, East or West to move. Inv to see invetory ");
+		System.out.print("North, South, East or West to move. Inv to see inventory ");
 		String direction = input.nextLine();
 		
 		switch(direction.toLowerCase()) {
-			case "north": this.moveypos(1); break;
-			case "west": this.movexpos(-1); break;
-			case "east": this.movexpos(1); break;
-			case "south": this.moveypos(-1);break;
+			case "north": this.moveY(1); break;
+			case "west": this.moveX(-1); break;
+			case "east": this.moveX(1); break;
+			case "south": this.moveY(-1);break;
 			case "inv": this.displayInventory(); break;
 			default: System.out.println("Invalid, valid directions are: north, south, east, west");
 		}
@@ -98,51 +98,48 @@ public abstract class Player {
 		return "(" + this.xpos + "," + this.ypos + ")";
 	}
 	
-	public int getxpos() {
+	public int getX() {
 		return this.xpos;
 	}
 	
-	public int getypos() {
+	public int getY() {
 		return this.ypos;
 	}
 	
-	public void movexpos(int dx) {
+	public void moveX(int dx) {
 		this.xpos+=dx;
 	}
 	
-	public void moveypos(int dy) {
+	public void moveY(int dy) {
 		this.ypos+=dy;
 	}
 	
+	@Deprecated
 	public void takeDamage(int x) {
-		this.health-=x;
+		changeHealth(-1 * x);
 	}
 	
-	public void takeHealth(int x) {
+	public void changeHealth(int x) {
 		this.health+=x;
 	}
 	
-	public void useMana(int x) {
-		this.mana-=x;
-	}
-	
-	public void takeMana(int x) {
+	public void changeMana(int x) {
 		this.mana+=x;
 	}
 	
-	public void setxpos(int x) {
+	public void setX(int x) {
 		this.xpos = x;
 	}
 	
-	public void setypos(int y) {
+	public void setY(int y) {
 		this.ypos = y;
 	}
 	
-	public void chageAtk(int da) {
+	public void changeAttack(int da) {
 		this.attack+=da;
 	}
 	
-	public void changeDef(int dd) {
+	public void changeDefense(int dd) {
 		this.defense+=dd;
 	}
 	

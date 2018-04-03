@@ -35,7 +35,7 @@ public class Archer extends Player {
 	public void ability(Monster target) {
 		int damage = 1;
 		System.out.println("You fire a special arrow!");
-		this.takeMana(30);
+		this.changeMana(30);
 		if(((RangedWeapon) this.inventory.getSlot(0).getItem()).hit(target.getDistance())) {			
 			damage = (int) (this.getAtk()*b.getDamage());
 		}

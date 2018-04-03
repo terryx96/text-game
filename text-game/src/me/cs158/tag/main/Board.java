@@ -48,22 +48,22 @@ public class Board {
 	}
 	
 	public void checkPos(Player p) {
-		if(p.getxpos() < 0) {
-			p.setxpos(0);
+		if(p.getX() < 0) {
+			p.setX(0);
 			System.out.println("Out of bounds.");
 		}
-		if(p.getxpos() == this.getSize()) {
-			p.setxpos(this.getSize()-1);			
-			System.out.println("Out of bounds.");
-
-		}
-		if(p.getypos() < 0) {
-			p.setypos(0);
+		if(p.getX() == this.getSize()) {
+			p.setX(this.getSize()-1);			
 			System.out.println("Out of bounds.");
 
 		}
-		if(p.getypos() == this.getSize()) {
-			p.setypos(this.getSize()-1);
+		if(p.getY() < 0) {
+			p.setY(0);
+			System.out.println("Out of bounds.");
+
+		}
+		if(p.getY() == this.getSize()) {
+			p.setY(this.getSize()-1);
 			System.out.println("Out of bounds.");
 
 		}
