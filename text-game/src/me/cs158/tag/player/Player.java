@@ -45,8 +45,8 @@ public abstract class Player {
 		return this.name;
 	}
 	
-	public String displayInventory() {
-		return this.inventory.printInventory();
+	public void displayInventory() {
+		System.out.println(this.inventory.printInventory());
 	}
 	
 	public PlayerInventory getInventory() {
