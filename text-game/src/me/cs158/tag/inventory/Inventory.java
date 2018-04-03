@@ -174,4 +174,16 @@ public class Inventory {
 		return out;
 	}
 	
+	/**
+	 * Returns the total count of items in the inventory
+	 * @return	the total count of items in the inventory
+	 */
+	public int getTotalCount() {
+		int count = 0;
+		for(ItemStack is : items) {
+			count += is.getCount();
+		}
+		return count;
+	}
+	
 }
