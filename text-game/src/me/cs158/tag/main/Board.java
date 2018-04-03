@@ -32,7 +32,7 @@ public class Board {
 		int x = (int) (Math.random()*this.size + 1);
 		int y = (int) (Math.random()*this.size + 1);
 		
-		this.board[1][1] = new FindManaPotion(p);
+		this.board[1][1] = new FindPotion(p);
 		this.board[1][2] = new EastScroll();
 		this.board[1][3] = new TurnEightScroll();
 		

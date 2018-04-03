@@ -2,7 +2,10 @@ package me.cs158.tag.item;
 
 public enum PotionType {
 	NOTHING,
-	MANA("Mana")
+	MANA("Mana"),
+	HEALTH("Health"),
+	ATTACK("Attack"),
+	DEFENSE("Defense")
 	;
 	
 	private final String name;

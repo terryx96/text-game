@@ -7,7 +7,7 @@ import me.cs158.tag.main.Scroll;
 
 public class EastScroll extends DisplayEvent{
 	public EastScroll() {
-		super(new Scroll("images/east.jpg"));
+		super(new Scroll("images/blueKey.png"));
 		JFrame f = new JFrame("HINT");
 	}
 	

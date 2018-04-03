@@ -1,5 +1,11 @@
 package me.cs158.tag.main;
+import java.awt.Component;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.util.Scanner;
+
+import javax.imageio.ImageIO;
+import javax.swing.JFrame;
 
 import me.cs158.tag.monsters.Sandbag;
 import me.cs158.tag.player.*;
@@ -12,6 +18,10 @@ public class Main {
 	public static void main(String[] args) {
 		Player p = createCharacter();
 		Board b = new Board(10, p);	
+		
+		
+		
+		
 		while(true) {
 			p.move();
 			b.checkPos(p);
