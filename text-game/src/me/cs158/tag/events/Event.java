@@ -8,7 +8,7 @@ public abstract class Event {
 	protected ArrayList<Monster> enemies;
 
 	public Event() {
-		enemies = null;
+		this.enemies = null;
 	}
 	
 	public Event(Monster... monsters) {
@@ -21,6 +21,7 @@ public abstract class Event {
 	public void actions() {
 		System.out.println("Actions will be here");
 	}
+	
 	
 	@Override
 	public String toString() {

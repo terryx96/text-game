@@ -45,8 +45,12 @@ public abstract class Player {
 		return this.name;
 	}
 	
-	public String getInventory() {
+	public String displayInventory() {
 		return this.inventory.printInventory();
+	}
+	
+	public PlayerInventory getInventory() {
+		return this.inventory;
 	}
 	
 	public int getHealth() {
@@ -66,7 +70,7 @@ public abstract class Player {
 	}
 	
 	public void move() {
-		System.out.print("Which direction: ");
+		System.out.print("North, South, East or West to move. Inv to see invetory ");
 		String direction = input.nextLine();
 		
 		switch(direction.toLowerCase()) {
@@ -74,12 +78,15 @@ public abstract class Player {
 			case "west": this.movexpos(-1); break;
 			case "east": this.movexpos(1); break;
 			case "south": this.moveypos(-1);break;
+			case "inv": this.displayInventory(); break;
 			default: System.out.println("Invalid, valid directions are: north, south, east, west");
 		}
 		
 		System.out.println("Current Position: " + this.displayPosition());
 		
 	}
+	
+	
 	
 	
 	@Override

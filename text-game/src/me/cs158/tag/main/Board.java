@@ -1,6 +1,7 @@
 package me.cs158.tag.main;
 
 import me.cs158.tag.events.*;
+
 import me.cs158.tag.events.hostile.*;
 import me.cs158.tag.events.passive.*;
 import me.cs158.tag.events.hostile.GhostFight;
@@ -15,13 +16,15 @@ public class Board {
 	 */
 	private Event[][] board;
 	private int size;
+	private Player p;
 	
 	public Board() {
 		board = new Event[10][10];
 		this.initializeBoard();
 	}
 	
-	public Board(int size) {
+	public Board(int size, Player p) {
+		this.p = p;
 		this.size = size;
 		board = new Event[this.size][this.size];
 		this.initializeBoard();
@@ -31,7 +34,7 @@ public class Board {
 		int x = (int) (Math.random()*this.size + 1);
 		int y = (int) (Math.random()*this.size + 1);
 		
-		this.board[1][1] = new GhostFight();
+		this.board[1][1] = new FindManaPotion(p);
 		this.board[1][2] = new EastScroll();
 		this.board[1][3] = new TurnEightScroll();
 		

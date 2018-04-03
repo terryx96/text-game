@@ -10,28 +10,16 @@ public class Main {
 	public static Scanner input = new Scanner(System.in);
 	
 	public static void main(String[] args) {
-		//Player p = createCharacter();
-		Board b = new Board(10);	
-		Player x = new Archer("Terry", 10,10);
-		System.out.println(x);
-		
-		Sandbag poorboy = new Sandbag(1000, 2);
-		System.out.println(poorboy.getHp());
-		while(!poorboy.dead()) {
-			x.ability(poorboy);
-			System.out.println(poorboy.getHp());
-		}
-		
-		
-		
-		/*while(true) {
+		Player p = createCharacter();
+		Board b = new Board(10, p);	
+		while(true) {
 			p.move();
 			b.checkPos(p);
 			b.getBoard(p.getxpos(), p.getypos()).actions();
 			
 			
 		}
-		*/
+		
 
 	}
 	
