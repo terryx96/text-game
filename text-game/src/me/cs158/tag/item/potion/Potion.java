@@ -1,4 +1,7 @@
-package me.cs158.tag.item;
+package me.cs158.tag.item.potion;
+
+import me.cs158.tag.item.Consumable;
+import me.cs158.tag.item.Items;
 
 public abstract class Potion extends Consumable {
 	

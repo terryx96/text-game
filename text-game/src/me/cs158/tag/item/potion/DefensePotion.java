@@ -1,11 +1,14 @@
-package me.cs158.tag.item;
+package me.cs158.tag.item.potion;
 
-public class HealthPotion extends Potion {
+import me.cs158.tag.item.Item;
+import me.cs158.tag.item.Items;
+
+public class DefensePotion extends Potion {
 
 	private static final Items ITEM = Items.POTION;
-	private static final PotionType TYPE = PotionType.HEALTH;
+	private static final PotionType TYPE = PotionType.DEFENSE;
 	
-	public HealthPotion(int amount) {
+	public DefensePotion(int amount) {
 		super(ITEM, TYPE, amount);
 	}
 

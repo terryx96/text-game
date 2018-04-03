@@ -1,4 +1,4 @@
-package me.cs158.tag.item;
+package me.cs158.tag.item.potion;
 
 public enum PotionType {
 	NOTHING,

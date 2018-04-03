@@ -1,4 +1,7 @@
-package me.cs158.tag.item;
+package me.cs158.tag.item.potion;
+
+import me.cs158.tag.item.Item;
+import me.cs158.tag.item.Items;
 
 public class ManaPotion extends Potion {
 

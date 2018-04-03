@@ -1,5 +1,7 @@
 package me.cs158.tag.item;
 
+import me.cs158.tag.item.potion.Potion;
+
 public class ItemData {
 	
 	/**

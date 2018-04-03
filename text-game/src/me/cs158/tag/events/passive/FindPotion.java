@@ -2,8 +2,12 @@ package me.cs158.tag.events.passive;
 
 import me.cs158.tag.events.Event;
 import me.cs158.tag.inventory.ItemStack;
-import me.cs158.tag.item.ManaPotion;
 import me.cs158.tag.item.*;
+import me.cs158.tag.item.potion.AttackPotion;
+import me.cs158.tag.item.potion.DefensePotion;
+import me.cs158.tag.item.potion.HealthPotion;
+import me.cs158.tag.item.potion.ManaPotion;
+import me.cs158.tag.item.potion.Potion;
 import me.cs158.tag.main.Util;
 import me.cs158.tag.player.Player;
 
