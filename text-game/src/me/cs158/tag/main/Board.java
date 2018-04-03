@@ -33,8 +33,14 @@ public class Board {
 		int y = (int) (Math.random()*this.size + 1);
 		
 		this.board[1][1] = new FindPotion(p);
-		this.board[1][2] = new EastScroll();
-		this.board[1][3] = new TurnEightScroll();
+		this.board[2][1] = new FindPotion(p);
+		this.board[3][1] = new FindPotion(p);
+		this.board[4][1] = new FindPotion(p);
+		this.board[5][1] = new FindPotion(p);
+		this.board[6][1] = new FindPotion(p);
+		this.board[7][1] = new EastScroll();
+		this.board[8][1] = new TurnEightScroll();
+		
 		
 		for(int r = 0; r < this.board.length; r++) {
 			for(int c = 0; c < this.board[0].length; c++) {
