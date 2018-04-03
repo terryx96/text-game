@@ -1,9 +1,9 @@
 package me.cs158.tag.events.passive;
 import me.cs158.tag.events.Event;
 
-public class Dumby extends Event {
+public class Dummy extends Event {
 	
-	public Dumby() {
+	public Dummy() {
 		super();
 	}
 	

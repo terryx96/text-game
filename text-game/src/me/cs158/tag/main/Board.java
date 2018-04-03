@@ -3,7 +3,7 @@ package me.cs158.tag.main;
 import me.cs158.tag.events.*;
 
 import me.cs158.tag.events.passive.*;
-import me.cs158.tag.events.passive.Dumby;
+import me.cs158.tag.events.passive.Dummy;
 import me.cs158.tag.events.passive.EastScroll;
 import me.cs158.tag.player.Player;
 
@@ -45,7 +45,7 @@ public class Board {
 		for(int r = 0; r < this.board.length; r++) {
 			for(int c = 0; c < this.board[0].length; c++) {
 				if(this.board[r][c] == null) {
-					this.board[r][c] = new Dumby();
+					this.board[r][c] = new Dummy();
 				}
 			}
 		}
