@@ -4,8 +4,8 @@ public enum PotionType {
 	NOTHING,
 	MANA("Mana"),
 	HEALTH("Health"),
-	ATTACK("Attack"),
-	DEFENSE("Defense")
+	ATTACK("Strength"),
+	DEFENSE("Resistance")
 	;
 	
 	private final String name;
