@@ -2,9 +2,7 @@ package me.cs158.tag.main;
 
 import me.cs158.tag.events.*;
 
-import me.cs158.tag.events.hostile.*;
 import me.cs158.tag.events.passive.*;
-import me.cs158.tag.events.hostile.GhostFight;
 import me.cs158.tag.events.passive.Dumby;
 import me.cs158.tag.events.passive.EastScroll;
 import me.cs158.tag.player.Player;

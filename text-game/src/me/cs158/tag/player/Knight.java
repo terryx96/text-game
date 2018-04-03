@@ -3,7 +3,6 @@ package me.cs158.tag.player;
 import me.cs158.tag.inventory.ItemStack;
 import me.cs158.tag.item.BroadSword;
 import me.cs158.tag.item.MeleeWeapon;
-import me.cs158.tag.item.RangedWeapon;
 import me.cs158.tag.monsters.Monster;
 
 public class Knight extends Player{

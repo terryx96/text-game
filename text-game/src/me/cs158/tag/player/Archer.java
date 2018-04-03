@@ -3,7 +3,6 @@ package me.cs158.tag.player;
 import me.cs158.tag.inventory.ItemStack;
 import me.cs158.tag.item.Bow;
 import me.cs158.tag.item.RangedWeapon;
-import me.cs158.tag.main.Util;
 import me.cs158.tag.monsters.Monster;
 
 public class Archer extends Player {

@@ -1,14 +1,11 @@
 package me.cs158.tag.player;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
-import me.cs158.tag.inventory.Inventory;
 import me.cs158.tag.inventory.ItemStack;
 import me.cs158.tag.inventory.PlayerInventory;
 import me.cs158.tag.item.Item;
 import me.cs158.tag.item.Weapon;
-import me.cs158.tag.main.Board;
 import me.cs158.tag.main.Main.SUCCESS;
 import me.cs158.tag.monsters.Monster;
 
