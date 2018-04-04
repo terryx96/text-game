@@ -2,6 +2,7 @@ package me.cs158.tag.item.potion;
 
 import me.cs158.tag.item.Item;
 import me.cs158.tag.item.Items;
+import me.cs158.tag.player.Player;
 
 public class AttackPotion extends Potion {
 
@@ -24,6 +25,12 @@ public class AttackPotion extends Potion {
 	@Override
 	public Item copy() {
 		return new ManaPotion(this.getAmount());
+	}
+	
+	@Override
+	public boolean use(Player p) {
+		p.changeAttack(this.getAmount());
+		return true;
 	}
 	
 }

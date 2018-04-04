@@ -1,5 +1,7 @@
 package me.cs158.tag.item;
 
+import me.cs158.tag.player.Player;
+
 public abstract class Item {
 	
 	private String name;
@@ -48,5 +50,12 @@ public abstract class Item {
 	 * @return	a copy of the item
 	 */
 	public abstract Item copy();
+	
+	/**
+	 * Uses an item
+	 * @param p	the player using the item
+	 * @return	true if the the item was successfully used, false otherwise
+	 */
+	public abstract boolean use(Player p);
 	
 }

@@ -1,5 +1,7 @@
 package me.cs158.tag.item;
 
+import me.cs158.tag.player.Player;
+
 public class Bow extends RangedWeapon {
 	
 	private static final Items ITEM = Items.BOW;
@@ -24,6 +26,11 @@ public class Bow extends RangedWeapon {
 	@Override
 	public Item copy() {
 		return new Bow(this.getMinDamage(), this.getMaxDamage(), this.getRange(), this.getChance(), this.getFallOff());
+	}
+	
+	@Override
+	public boolean use(Player p) {
+		return false;
 	}
 	
 }

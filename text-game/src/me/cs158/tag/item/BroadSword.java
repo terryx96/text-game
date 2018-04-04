@@ -1,5 +1,7 @@
 package me.cs158.tag.item;
 
+import me.cs158.tag.player.Player;
+
 public class BroadSword extends MeleeWeapon {
 	
 	private static final Items ITEM = Items.BROADSWORD;
@@ -20,6 +22,11 @@ public class BroadSword extends MeleeWeapon {
 	@Override
 	public Item copy() {
 		return new BroadSword(this.getMinDamage(), this.getMaxDamage());
+	}
+	
+	@Override
+	public boolean use(Player p) {
+		return false;
 	}
 	
 }

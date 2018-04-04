@@ -1,5 +1,7 @@
 package me.cs158.tag.item;
 
+import me.cs158.tag.player.Player;
+
 public class Key extends Item {
 	
 	private static final Items ITEM = Items.KEY;
@@ -30,6 +32,11 @@ public class Key extends Item {
 	@Override
 	public Item copy() {
 		return new Key(id);
+	}
+	
+	@Override
+	public boolean use(Player p) {
+		return false;
 	}
 	
 }
