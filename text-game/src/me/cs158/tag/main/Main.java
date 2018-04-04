@@ -71,18 +71,22 @@ public class Main {
 		System.out.println("Fight!!");
 		
 		do {
-			System.out.println(currentPosition.groupHealth());
-			System.out.println(p);
-			System.out.println("ATTACK | ABILITY | DEFEND | ITEM");
+			System.out.println("--------------------------------\n"
+							 + "ATTACK | ABILITY | DEFEND | ITEM");
 			String choice = input.nextLine();
 			switch(choice.toLowerCase()) {
 			case "attack": attack(); break;
+			default: continue;
 			}
 			currentPosition.actions();
+			if(p.getHealth() <= 0) {
+				break;
+			}
 		}
-		while(p.getHealth() > 0 || currentPosition.groupHealth() > 0);
-			
-		currentPosition = new Dummy();
+		while(currentPosition.groupHealth() > 0);
+		
+		System.out.println("You win!");
+		b.setBoard(p.getX(), p.getY(), new Dummy());
 	}
 	
 	private static void attack() {
@@ -93,6 +97,10 @@ public class Main {
 			try {
 				int choice = input.nextInt();
 				p.attack(enemies.get(choice-1));
+				if(!enemies.get(choice-1).getAlive()) {
+					enemies.remove(enemies.get(choice-1));
+				}
+				input.nextLine();
 			}
 			catch(java.util.InputMismatchException e) {
 				System.out.println("Pick an enemy!");
@@ -101,7 +109,8 @@ public class Main {
 		else {
 			currentPosition.displayEnemies();
 			p.attack(enemies.get(0));
-		}
+			}
+		System.out.println("--------------------------------");
 		
 		
 	}

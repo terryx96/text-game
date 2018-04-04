@@ -18,9 +18,9 @@ public class Ghost extends Monster{
 	}
 	
 	@Override
-	public String taunt() {
+	public void taunt() {
 		String[] sentences = {"Boo!", "Haha!", "You scared?"};
-		return sentences[Util.random(2)];
+		System.out.println(sentences[Util.random(2)]);
 	}
 	
 	

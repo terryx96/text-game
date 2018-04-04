@@ -74,4 +74,8 @@ public class Board {
 	public Event getBoard(int x, int y){
 		return this.board[x][y];
 	}
+	
+	public void setBoard(int x, int y, Event e) {
+		this.board[x][y] = e;
+	}
 }

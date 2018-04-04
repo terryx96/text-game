@@ -27,9 +27,9 @@ public abstract class Event {
 	
 	public int groupHealth() {
 		int output = 0;
-		for(Monster e : enemies) {
+		for(Monster e : this.enemies) {
 			output+=e.getHp();
-		}
+			}
 		return output;
 	}
 	

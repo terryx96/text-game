@@ -8,14 +8,14 @@ public abstract class Monster {
 	private int strength = 1;
 	protected int distance;
 	protected String type;
+	private boolean alive = true;
 	
 	public Monster(int hp, int d) {
 		this.health = hp;
 		this.distance = d;
 	}
 	
-	public String taunt() {
-		return "";
+	public void taunt() {
 	}			
 	
 	public void attack() {
@@ -39,11 +39,13 @@ public abstract class Monster {
 		return "[" + this.type + " " + this.getHp() + "HP]";
 	}
 	
-	public boolean dead() {
+	public void checkDead() {
 		if(this.health <= 0) {
-			this.health = 0;
-			return true;
+			this.alive = false;
 		}
-		return false;
+	}
+	
+	public boolean getAlive() {
+		return this.alive;
 	}
 }

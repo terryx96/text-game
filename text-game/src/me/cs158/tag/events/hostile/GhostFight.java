@@ -28,7 +28,7 @@ public class GhostFight extends Event{
 	}
 	
 	public static Ghost[] randomGhosts() {
-		Ghost[] output = new Ghost[Util.random(1,5)];
+		Ghost[] output = new Ghost[Util.random(1,3)];
 		for(int i = 0; i < output.length; i++) {
 			output[i] = (new Ghost(Util.random(50, 100), Util.random(10,20), Util.random(2,20)));
 		}
