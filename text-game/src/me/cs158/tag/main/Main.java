@@ -2,11 +2,16 @@ package me.cs158.tag.main;
 import java.awt.Component;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
+import me.cs158.tag.events.Event;
+import me.cs158.tag.events.hostile.GhostFight;
+import me.cs158.tag.events.passive.Dummy;
+import me.cs158.tag.monsters.Monster;
 import me.cs158.tag.monsters.Sandbag;
 import me.cs158.tag.player.*;
 
@@ -14,10 +19,13 @@ public class Main {
 	
 	public static enum SUCCESS { TRUE, FALSE, PARTIAL }
 	public static Scanner input = new Scanner(System.in);
+	public static Player p;
+	public static Board b;
+	public static Event currentPosition;
 	
 	public static void main(String[] args) {
-		Player p = createCharacter();
-		Board b = new Board(10, p);	
+		p = createCharacter();
+		b = new Board(10, p);	
 		
 		
 		
@@ -25,7 +33,13 @@ public class Main {
 		while(true) {
 			p.move();
 			b.checkPos(p);
-			b.getBoard(p.getX(), p.getY()).actions();
+			currentPosition = b.getBoard(p.getX(), p.getY());
+
+			if(currentPosition.getClass().getPackage().getName().equals("me.cs158.tag.events.hostile")) {
+				enterFight();
+			}
+			
+			
 			
 			
 		}
@@ -53,6 +67,44 @@ public class Main {
 		}
 	}
 	
+	public static void enterFight() {
+		System.out.println("Fight!!");
+		
+		do {
+			System.out.println(currentPosition.groupHealth());
+			System.out.println(p);
+			System.out.println("ATTACK | ABILITY | DEFEND | ITEM");
+			String choice = input.nextLine();
+			switch(choice.toLowerCase()) {
+			case "attack": attack(); break;
+			}
+			currentPosition.actions();
+		}
+		while(p.getHealth() > 0 || currentPosition.groupHealth() > 0);
+			
+		currentPosition = new Dummy();
+	}
+	
+	private static void attack() {
+		ArrayList<Monster> enemies = currentPosition.getEnemies();
+		if(enemies.size() > 1) {
+			currentPosition.displayEnemies();
+			System.out.print("\nWhich enemy will you attack >>> ");
+			try {
+				int choice = input.nextInt();
+				p.attack(enemies.get(choice-1));
+			}
+			catch(java.util.InputMismatchException e) {
+				System.out.println("Pick an enemy!");
+			}
+		}
+		else {
+			currentPosition.displayEnemies();
+			p.attack(enemies.get(0));
+		}
+		
+		
+	}
 	
 	
 	

@@ -1,30 +1,28 @@
 package me.cs158.tag.monsters;
+import me.cs158.tag.main.Main;
 import me.cs158.tag.main.Util;
 import java.util.ArrayList;
 
 public class Ghost extends Monster{
 	private int ectoplasm;
+	private String type = "Ghost";
 	
 	public Ghost(int hp, int d, int ecto) {
 		super(hp, d);
-		this.ectoplasm = ecto;
-		this.sentences = new ArrayList<String>();
-		this.sentences.add("Boo!");
-		this.sentences.add("Haha!"); //probably a better way to do this ...
-		this.sentences.add("Go away!");
-		this.sentences.add("I'm a ghost, fight me!");
 	}
 	
 	@Override
-	public int attack() {
-		this.speak();
-		return Util.random(this.ectoplasm);
+	public void attack() {
+		System.out.println("Ghost attacks!");
+		Main.p.changeHealth(-Util.random(0,this.ectoplasm));
 	}
 	
 	@Override
-	public String toString() {
-		return "Boo! I am a ghost!";
+	public String taunt() {
+		String[] sentences = {"Boo!", "Haha!", "You scared?"};
+		return sentences[Util.random(2)];
 	}
+	
 	
 	
 	

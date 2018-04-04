@@ -1,7 +1,7 @@
 package me.cs158.tag.main;
 
 import me.cs158.tag.events.*;
-
+import me.cs158.tag.events.hostile.GhostFight;
 import me.cs158.tag.events.passive.*;
 import me.cs158.tag.events.passive.Dummy;
 import me.cs158.tag.events.passive.EastScroll;
@@ -32,14 +32,7 @@ public class Board {
 		int x = (int) (Math.random()*this.size + 1);
 		int y = (int) (Math.random()*this.size + 1);
 		
-		this.board[1][1] = new FindPotion(p);
-		this.board[2][1] = new FindPotion(p);
-		this.board[3][1] = new FindPotion(p);
-		this.board[4][1] = new FindPotion(p);
-		this.board[5][1] = new FindPotion(p);
-		this.board[6][1] = new FindPotion(p);
-		this.board[7][1] = new EastScroll();
-		this.board[8][1] = new TurnEightScroll();
+		this.board[1][1] = new GhostFight();
 		
 		
 		for(int r = 0; r < this.board.length; r++) {

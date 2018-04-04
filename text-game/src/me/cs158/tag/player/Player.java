@@ -6,6 +6,7 @@ import me.cs158.tag.inventory.ItemStack;
 import me.cs158.tag.inventory.PlayerInventory;
 import me.cs158.tag.item.Item;
 import me.cs158.tag.item.Weapon;
+import me.cs158.tag.main.Main;
 import me.cs158.tag.main.Main.SUCCESS;
 import me.cs158.tag.monsters.Monster;
 
@@ -19,6 +20,7 @@ public abstract class Player {
 	private int ypos = 0;
 	protected int attack;
 	protected int defense;
+	
 	
 	public Player(String name, int hp, int m) {
 		this.name = name;

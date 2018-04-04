@@ -10,7 +10,7 @@ public class Archer extends Player {
 	
 	public Archer(String name, int hp, int m) {
 		super(name, hp, m);
-		this.attack = 5;
+		this.attack = 500;
 		this.defense = 6;
 		b = new Bow(this.attack, this.attack*2, 0, 100, 0);
 		this.inventory.addItem(new ItemStack(b));

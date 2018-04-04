@@ -27,9 +27,9 @@ public class FindPotion extends Event{
 		int type = Util.random(0, 3);
 		int amount = Util.random(1,3);
 		switch(type) {
-		case 0: return new ManaPotion(amount);
-		case 1:	return new HealthPotion(amount);
-		case 2:	return new DefensePotion(amount);
+		case 0: return new ManaPotion(amount); 
+		case 1:	return new HealthPotion(amount); 
+		case 2:	return new DefensePotion(amount); 
 		case 3: return new AttackPotion(amount);
 		default: return null;
 		}

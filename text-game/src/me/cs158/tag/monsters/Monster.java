@@ -7,20 +7,19 @@ public abstract class Monster {
 	private int health;
 	private int strength = 1;
 	protected int distance;
-	protected ArrayList<String> sentences;
+	protected String type;
 	
 	public Monster(int hp, int d) {
 		this.health = hp;
 		this.distance = d;
 	}
 	
-	public String speak() {
-		int temp = (int) (Math.random()*this.sentences.size() + 1) - 1; //The last index of the monster's sentences
-		return sentences.get(temp);										//will be reserved for it's introduction
-	}																	//only. The -1 on the outside prevents 
-																		//it from being used again
-	public int attack() {
-		return Util.random(10) * this.strength;
+	public String taunt() {
+		return "";
+	}			
+	
+	public void attack() {
+		
 	}
 	
 	public int getHp() {
@@ -33,6 +32,11 @@ public abstract class Monster {
 	
 	public void setHp(int d) {
 		this.health-=d;
+	}
+	
+	@Override
+	public String toString() {
+		return "[" + this.type + " " + this.getHp() + "HP]";
 	}
 	
 	public boolean dead() {

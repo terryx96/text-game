@@ -20,6 +20,7 @@ public class Knight extends Player{
 	public void attack(Monster target) {
 		int damage = 1;
 		System.out.println("You slash your sword!");
+		
 		target.setHp(damage);
 	}
 	
