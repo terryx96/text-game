@@ -5,6 +5,7 @@ import me.cs158.tag.item.Item;
 import me.cs158.tag.item.ItemData;
 import me.cs158.tag.item.Items;
 import me.cs158.tag.item.Nothing;
+import me.cs158.tag.player.Player;
 
 public class ItemStack {
 	
@@ -153,6 +154,14 @@ public class ItemStack {
 	@Override
 	public String toString() {
 		return item.toString() + "x" + count;
+	}
+	
+	public boolean use(Player p) {
+		boolean success = this.item.use(p);
+		if(success) {
+			this.remove();
+		}
+		return success;
 	}
 	
 }

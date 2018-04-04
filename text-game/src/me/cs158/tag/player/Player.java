@@ -184,4 +184,8 @@ public abstract class Player {
 		return this.inventory.getEquippedWeapon();
 	}
 	
+	public boolean useItem(int index) {
+		return this.inventory.getSlot(index).use(this);
+	}
+	
 }
