@@ -30,7 +30,7 @@ public class Main {
 		
 		
 		
-		while(true) {
+		do{
 			p.move();
 			b.checkPos(p);
 			currentPosition = b.getBoard(p.getX(), p.getY());
@@ -38,11 +38,11 @@ public class Main {
 			if(currentPosition.getClass().getPackage().getName().equals("me.cs158.tag.events.hostile")) {
 				enterFight();
 			}
-			
-			
-			
-			
+			else {
+				currentPosition.actions();
+			}
 		}
+		while(p.getAlive());
 		
 
 	}
@@ -68,7 +68,7 @@ public class Main {
 	}
 	
 	public static void enterFight() {
-		System.out.println("Fight!!");
+		System.out.println(currentPosition.getDescription());
 		
 		do {
 			System.out.println("--------------------------------\n"
@@ -76,17 +76,23 @@ public class Main {
 			String choice = input.nextLine();
 			switch(choice.toLowerCase()) {
 			case "attack": attack(); break;
+			case "ability": ability(); break;
+			case "defend" : defend(); break;
+			case "item" : item(); break;
 			default: continue;
 			}
 			currentPosition.actions();
-			if(p.getHealth() <= 0) {
-				break;
-			}
+			
 		}
-		while(currentPosition.groupHealth() > 0);
+		while(currentPosition.groupHealth() > 0 && p.getHealth() > 0);
 		
+		if(p.getHealth() <= 0) {
+			die();
+		}
+		else {
 		System.out.println("You win!");
 		b.setBoard(p.getX(), p.getY(), new Dummy());
+		}
 	}
 	
 	private static void attack() {
@@ -113,6 +119,50 @@ public class Main {
 		System.out.println("--------------------------------");
 		
 		
+	}
+	
+	private static void ability() {
+		ArrayList<Monster> enemies = currentPosition.getEnemies();
+		if(enemies.size() > 1) {
+			currentPosition.displayEnemies();
+			System.out.print("\nWhich enemy will you attack >>> ");
+			try {
+				int choice = input.nextInt();
+				p.ability(enemies.get(choice-1));
+				if(!enemies.get(choice-1).getAlive()) {
+					enemies.remove(enemies.get(choice-1));
+				}
+				input.nextLine();
+			}
+			catch(java.util.InputMismatchException e) {
+				System.out.println("Pick an enemy!");
+			}
+		}
+		else {
+			currentPosition.displayEnemies();
+			p.attack(enemies.get(0));
+			}
+		System.out.println("--------------------------------");
+		
+		
+	}
+	
+	public static void defend() {
+		System.out.println("You brace for impact");
+	}
+	
+	public static void item() {
+		System.out.println("--------------------------------");
+		System.out.print("Select an item to use:\n>>>");
+		p.displayInventory();
+		int choice = input.nextInt();
+		//p.getInventory().getItems().get(choice-1).use();
+		
+	}
+	
+	public static void die() {
+		p.kill();
+		System.out.println("\nYou have died!\nGame over.");
 	}
 	
 	

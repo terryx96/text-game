@@ -23,6 +23,9 @@ public abstract class Monster {
 	}
 	
 	public int getHp() {
+		if(this.health < 0) {
+			this.health = 0;
+		}
 		return this.health;
 	}
 	

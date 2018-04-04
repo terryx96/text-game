@@ -2,6 +2,7 @@ package me.cs158.tag.main;
 
 import me.cs158.tag.events.*;
 import me.cs158.tag.events.hostile.GhostFight;
+import me.cs158.tag.events.hostile.GoblinFight;
 import me.cs158.tag.events.passive.*;
 import me.cs158.tag.events.passive.Dummy;
 import me.cs158.tag.events.passive.EastScroll;
@@ -33,6 +34,7 @@ public class Board {
 		int y = (int) (Math.random()*this.size + 1);
 		
 		this.board[1][1] = new GhostFight();
+		this.board[0][1] = new GoblinFight();
 		
 		
 		for(int r = 0; r < this.board.length; r++) {

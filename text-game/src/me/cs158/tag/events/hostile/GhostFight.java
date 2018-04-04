@@ -14,10 +14,11 @@ public class GhostFight extends Event{
 	
 	public GhostFight() {
 		super(Main.p, randomGhosts());
+		this.description = "A flock of ghosts attacks you.";
 		
 	}
 	
-	@Override
+	/*@Override
 	public void actions() {
 		for(Monster e : this.enemies) {
 			switch(Util.random(2)) {
@@ -25,7 +26,7 @@ public class GhostFight extends Event{
 			case 1: e.attack();
 			}
 		}
-	}
+	}*/
 	
 	public static Ghost[] randomGhosts() {
 		Ghost[] output = new Ghost[Util.random(1,3)];

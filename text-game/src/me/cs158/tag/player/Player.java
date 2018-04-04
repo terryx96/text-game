@@ -20,6 +20,7 @@ public abstract class Player {
 	private int ypos = 0;
 	protected int attack;
 	protected int defense;
+	private boolean alive = true;
 	
 	
 	public Player(String name, int hp, int m) {
@@ -54,6 +55,10 @@ public abstract class Player {
 	
 	public int getHealth() {
 		return this.health;
+	}
+	
+	public boolean getAlive() {
+		return this.alive;
 	}
 	
 	public int getMana() {
@@ -136,6 +141,10 @@ public abstract class Player {
 	
 	public void changeAttack(int da) {
 		this.attack+=da;
+	}
+	
+	public void kill() {
+		this.alive = false;
 	}
 	
 	public void changeDefense(int dd) {
