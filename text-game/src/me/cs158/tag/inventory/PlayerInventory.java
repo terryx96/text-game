@@ -150,9 +150,6 @@ public class PlayerInventory extends Inventory {
 			}
 			return SUCCESS.FALSE;
 		} else {
-			if(getOpenItemSlots() == 0) {
-				return SUCCESS.FALSE;
-			}
 			for(int i = weaponSize;i < size;i++) {
 				ItemStack is = items.get(i);
 				if(is.getItem().equals(add.getItem())) {
