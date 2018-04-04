@@ -2,6 +2,7 @@ package me.cs158.tag.inventory;
 
 import me.cs158.tag.item.Items;
 import me.cs158.tag.item.Weapon;
+import me.cs158.tag.item.potion.Potion;
 import me.cs158.tag.main.Main.SUCCESS;
 import me.cs158.tag.player.Player;
 
@@ -192,7 +193,11 @@ public class PlayerInventory extends Inventory {
 		for(int i = 0;i < weaponSize;i++) {
 			ItemStack is = items.get(i);
 			if(is.getItemType() != Items.NOTHING) {
-				out += (i + 1) + ". " + is.getCount() + " x " + is.getItem().getName() + "\n";
+				out += (i + 1) + ". " + is.getCount() + " x " + is.getItem().getName();
+				if(is.getItem() instanceof Potion) {
+					out += " (amt = " + ((Potion) is.getItem()).getAmount() + ")";
+				}
+				out += "\n";
 			} else {
 				out += "AVAILABLE\n";
 			}
