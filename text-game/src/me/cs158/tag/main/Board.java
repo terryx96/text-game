@@ -25,7 +25,7 @@ public class Board {
 	public Board(int size, Player p) {
 		this.p = p;
 		this.size = size;
-		board = new Event[this.size][this.size];
+		this.board = new Event[this.size][this.size];
 		this.initializeBoard();
 	}
 	
@@ -33,8 +33,7 @@ public class Board {
 		int x = (int) (Math.random()*this.size + 1);
 		int y = (int) (Math.random()*this.size + 1);
 		
-		this.board[1][1] = new GhostFight();
-		this.board[0][1] = new GoblinFight();
+		this.board[1][1] = new FindPotion();
 		
 		
 		for(int r = 0; r < this.board.length; r++) {

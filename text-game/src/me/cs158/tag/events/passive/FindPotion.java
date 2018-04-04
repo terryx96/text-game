@@ -8,19 +8,19 @@ import me.cs158.tag.item.potion.DefensePotion;
 import me.cs158.tag.item.potion.HealthPotion;
 import me.cs158.tag.item.potion.ManaPotion;
 import me.cs158.tag.item.potion.Potion;
+import me.cs158.tag.main.Main;
 import me.cs158.tag.main.Util;
 import me.cs158.tag.player.Player;
 
 public class FindPotion extends Event{
-	Player p;
-	public FindPotion(Player p) {
+	
+	public FindPotion() {
 		super();
-		this.p = p;
 	}
 	
 	@Override
 	public void actions() {
-		p.getInventory().addItem(new ItemStack(this.randomPotion()));
+		Main.p.getInventory().addItem(new ItemStack(this.randomPotion()));
 	}
 	
 	public Potion randomPotion() {
