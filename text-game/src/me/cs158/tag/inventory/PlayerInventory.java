@@ -204,7 +204,7 @@ public class PlayerInventory extends Inventory {
 		for(int i = weaponSize;i < size;i++) {
 			ItemStack is = items.get(i);
 			if(is.getItemType() != Items.NOTHING) {
-				out += (i + weaponSize + 1) + ". " + is.getCount() + " x " + is.getItemType().toString() + "\n";
+				out += (i + 1) + ". " + is.getCount() + " x " + is.getItemType().toString() + "\n";
 			} else {
 				out += "AVAILABLE\n";
 			}
