@@ -156,6 +156,11 @@ public class ItemStack {
 		return item.toString() + "x" + count;
 	}
 	
+	/**
+	 * Use an item in this stack, and remove it from the stack if use was successful
+	 * @param p	the player using the item
+	 * @return	true if the item was used successfully, false otherwise
+	 */
 	public boolean use(Player p) {
 		boolean success = this.item.use(p);
 		if(success) {
