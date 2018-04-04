@@ -30,4 +30,9 @@ public abstract class Potion extends Consumable {
 		return amount;
 	}
 	
+	@Override
+	public String toString() {
+		return potionType.toString() + " " + super.toString();
+	}
+	
 }
