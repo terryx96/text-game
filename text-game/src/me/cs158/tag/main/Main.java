@@ -156,7 +156,7 @@ public class Main {
 		System.out.print("Select an item to use:\n>>>");
 		p.displayInventory();
 		int choice = input.nextInt();
-		//p.getInventory().getItems().get(choice-1).use();
+		p.getInventory().getItems().get(choice-1);
 		
 	}
 	

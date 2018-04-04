@@ -82,7 +82,10 @@ public abstract class Player {
 			case "west": this.moveX(-1); break;
 			case "east": this.moveX(1); break;
 			case "south": this.moveY(-1);break;
-			case "inv": this.displayInventory(); break;
+			case "inv":
+				this.displayInventory();
+				System.out.println(this.getInventory().toString(true));
+				break;
 			default: System.out.println("Invalid, valid directions are: north, south, east, west");
 		}
 		
