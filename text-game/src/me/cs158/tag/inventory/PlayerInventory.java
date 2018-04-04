@@ -197,7 +197,7 @@ public class PlayerInventory extends Inventory {
 			if(is.getItemType() != Items.NOTHING) {
 				out += is.getCount() + " x " + is.getItemType().toString() + "\n";
 			} else {
-				out += "AVAILABLE\n";
+				out += (i + 1) + "AVAILABLE\n";
 			}
 		}
 		out += "\nItems\n----------\n";
@@ -206,7 +206,7 @@ public class PlayerInventory extends Inventory {
 			if(is.getItemType() != Items.NOTHING) {
 				out += is.getCount() + " x " + is.getItemType().toString() + "\n";
 			} else {
-				out += "AVAILABLE\n";
+				out += (i + weaponSize + 1) + "AVAILABLE\n";
 			}
 		}
 		out = out.substring(0, out.length() - 1);
