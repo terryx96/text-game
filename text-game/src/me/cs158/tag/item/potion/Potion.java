@@ -9,7 +9,7 @@ public abstract class Potion extends Consumable {
 	private int amount;
 	
 	public Potion(Items item, PotionType potionType, int amount) {
-		super(item, potionType.toString());
+		super(item, potionType.toString() + " " + Items.POTION.toString());
 		this.potionType = potionType;
 		this.amount = amount;
 	}
@@ -28,11 +28,6 @@ public abstract class Potion extends Consumable {
 	 */
 	public int getAmount() {
 		return amount;
-	}
-	
-	@Override
-	public String toString() {
-		return potionType.toString() + " " + super.toString();
 	}
 	
 }

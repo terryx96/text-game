@@ -195,7 +195,7 @@ public class PlayerInventory extends Inventory {
 		for(int i = 0;i < weaponSize;i++) {
 			ItemStack is = items.get(i);
 			if(is.getItemType() != Items.NOTHING) {
-				out += (i + 1) + ". " + is.getCount() + " x " + is.getItemType().toString() + "\n";
+				out += (i + 1) + ". " + is.getCount() + " x " + is.getItem().getName() + "\n";
 			} else {
 				out += "AVAILABLE\n";
 			}
@@ -204,7 +204,7 @@ public class PlayerInventory extends Inventory {
 		for(int i = weaponSize;i < size;i++) {
 			ItemStack is = items.get(i);
 			if(is.getItemType() != Items.NOTHING) {
-				out += (i + 1) + ". " + is.getCount() + " x " + is.getItemType().toString() + "\n";
+				out += (i + 1) + ". " + is.getCount() + " x " + is.getItem().getName() + "\n";
 			} else {
 				out += "AVAILABLE\n";
 			}
