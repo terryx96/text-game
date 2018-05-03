@@ -20,6 +20,7 @@ public class FindPotion extends Event{
 	
 	@Override
 	public void actions() {
+		System.out.println("You found a potion!");
 		Main.p.getInventory().addItem(new ItemStack(this.randomPotion()));
 	}
 	

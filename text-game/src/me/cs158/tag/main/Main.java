@@ -22,18 +22,19 @@ public class Main {
 	public static Player p;
 	public static Board b;
 	public static Event currentPosition;
+	public static boolean onGoing = true;
 	
 	public static void main(String[] args) {
+		intro();
+		
 		p = createCharacter();
 		b = new Board(10, p);	
 		
-		
-		
-		
-		do{
+		do {
 			p.move();
 			b.checkPos(p);
 			currentPosition = b.getBoard(p.getX(), p.getY());
+			System.out.println();
 
 			if(currentPosition.getClass().getPackage().getName().equals("me.cs158.tag.events.hostile")) {
 				enterFight();
@@ -42,7 +43,7 @@ public class Main {
 				currentPosition.actions();
 			}
 		}
-		while(p.getAlive());
+		while(p.getAlive() && onGoing);
 		
 
 	}
@@ -63,6 +64,7 @@ public class Main {
 		case "warrior": return new Warrior(name, 150, 50);
 		case "wizard": return new Wizard(name, 80, 200);
 		case "paladin": return new Paladin(name, 120, 100);
+		case "dev" : return new Dev(name, 1000, 1000);
 		default: return new Knight(name, 200, 30);
 		}
 	}
@@ -71,6 +73,7 @@ public class Main {
 		System.out.println(currentPosition.getDescription());
 		
 		do {
+			System.out.println(p.getName() + " HP: " + p.getHealth());
 			System.out.println("--------------------------------\n"
 							 + "ATTACK | ABILITY | DEFEND | ITEM");
 			String choice = input.nextLine();
@@ -163,6 +166,14 @@ public class Main {
 	public static void die() {
 		p.kill();
 		System.out.println("\nYou have died!\nGame over.");
+	}
+	
+	public static void intro() {
+		System.out.println("You wake up one morning and feel something weird."
+				+ "\nOh crickey it's ectoplasm!"
+				+ "\nGhosts and Goblins are attacking the world!"
+				+ "\nTime to fight!"
+				+ "\n");
 	}
 	
 	

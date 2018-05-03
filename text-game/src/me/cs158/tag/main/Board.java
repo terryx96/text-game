@@ -30,10 +30,23 @@ public class Board {
 	}
 	
 	private void initializeBoard() {
-		int x = (int) (Math.random()*this.size + 1);
-		int y = (int) (Math.random()*this.size + 1);
+		this.board[6][3] = new FinalRoom();
 		
-		this.board[1][1] = new FindPotion();
+		for(int i = 0; i < 35; i++) {
+			int x = (int) (Math.random()*this.size);
+			int y = (int) (Math.random()*this.size);
+			int eventNum = (int) (Math.random()*2 + 1);
+			Event temp = null;
+			boolean open = this.board[x][y] == null;
+			switch(eventNum) {
+			case 0: if(open) temp = new FindPotion(); break;
+			case 1: if(open) temp = new GhostFight(); break;
+			case 2: if(open) temp = new GoblinFight(); break;
+			default: temp = null;
+			}
+			this.board[x][y] = temp;
+			
+		}
 		
 		
 		for(int r = 0; r < this.board.length; r++) {
